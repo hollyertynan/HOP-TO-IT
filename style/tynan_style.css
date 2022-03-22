@@ -20,3 +20,7 @@ Credit:
 .tynan-navbar-color {
     background-color: #49beb7;
 }
+
+.tynan-button-hover:hover {
+    opacity: 75%;
+}
