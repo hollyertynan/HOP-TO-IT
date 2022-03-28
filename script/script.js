@@ -85,52 +85,41 @@ div_message.addEventListener("click", messageDropdown)
 const div_log = document.querySelector("#logoutPic")
 div_log.addEventListener("click", logoutDropdown)
 
+const cancelButton = document.querySelector("#cancel")
+cancelButton.addEventListener("click", logoutDropdown)
+
+const exitButton = document.querySelector("#exitNoti")
+exitButton.addEventListener("click", notificationsDropdown)
+
+// const logButton = document.querySelector("#logout")
+// logButton.addEventListener("click", window.location("index.html"))
+
+
+
+// function initMap(){
+//   var options = {
+//      zoom: 8,
+//      center: {lat:30,lng:30}
+//   }
+//   var map = new google.maps.Map(document.getElementById('map'), options)
+// }
+
 
 
 window.onclick = function(event) 
 {
-    if (!event.target.matches('.dropbutton')) 
-    {
-      var dropdowns = document.getElementsByClassName("dropdown-content", "message-content", "notificationInfo");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var info = dropdowns[i];
-
-        if (info.classList.contains('show')) 
-        {
-            info.classList.remove('show');
-        }
-      }
-    }
+  
+    // const select2 = document.querySelector("#notificationInfo");
+    // if(select2.style.display === "block")
+    // {
+    //   console.log("beojmegs");
+    //   select2.style.display = "none"
+  
+    // }
+  
+    
 
     
-    if (!event.target.matches('.messageButton')) 
-    {
-      var dropdowns = document.getElementsByClassName("message-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var info = dropdowns[i];
-
-        if (info.classList.contains('show')) 
-        {
-            info.classList.remove('show');
-        }
-      }
-    }
-
-    if (!event.target.matches('#notifications')) 
-    {
-      var dropdowns = document.getElementsByClassName("notificationInfo");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var info = dropdowns[i];
-
-        if (info.classList.contains('show')) 
-        {
-            info.classList.remove('show');
-        }
-      }
-    }
 }
 
 
