@@ -96,6 +96,16 @@ exitButton.addEventListener("click", notificationsDropdown)
 
 
 
+// function initMap(){
+//   var options = {
+//      zoom: 8,
+//      center: {lat:30,lng:30}
+//   }
+//   var map = new google.maps.Map(document.getElementById('map'), options)
+// }
+
+
+
 window.onclick = function(event) 
 {
   
