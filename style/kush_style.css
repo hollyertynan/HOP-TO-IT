@@ -621,6 +621,10 @@ Credit:
       box-shadow: 0px 2px 2px 3px rgba(1, 1, 1, 0.219);
   }
 
+  #cancel:hover{
+      background-color: rgb(158, 155, 155);
+  }
+
 
 /*
 .messageButton {
@@ -830,12 +834,6 @@ Credit:
     display: block;
 }
 
-.flex-line{
-    display: flex;
-    /* font-size: 36px;
-    color: black;
-    font-weight: bold; */
-}
 
 /* #online{
     position: absolute;
@@ -846,21 +844,76 @@ Credit:
     font-weight: bold;
 } */
 
-/* #verticalLineLeft{
+#verticalLineLeft{
+    background-color: aqua;
+    display: flex;
+    /* flex-direction: column; */
     border-right: 1px solid rgba(0, 0, 0, 0.25);
     height: 520px;
-    margin-left: 50px;
-    margin-top: -25px !important;
+    /* margin-left: 50px;
+    margin-top: -25px !important; */
 }
 
-#verticalLineRigth{ 
+/*#verticalLineRigth{ 
     border-right: 1px solid rgba(0, 0, 0, 0.25);
     height: 520px;
     margin-top: -25px !important;
     
 } */
 
+
+
+.container-1, .container-2{
+    display: flex;
+    /* background-color: red; */
+    justify-content:space-between ;
+    align-items: center;
+    flex-wrap: wrap !important;
+}
+
+.container-1 div{
+    /* padding: 130px; */
+    padding-bottom: 285px;
+    border: 1px black solid;
+    flex-wrap: wrap;
+}
+
+.container-2 div{
+    /* padding: 45px; */
+    padding-bottom: 175px;
+    border: 1px black solid;
+    flex-wrap: wrap;
+}
+
+.line1{
+    flex: 1;  
+}
+.line2{
+    flex: 4; 
+    text-align: center; 
+}
+.line3{
+    flex: 1;  
+}
+
+.line4{
+    flex: 1;  
+}
+.line5{
+    flex: 4; 
+    text-align: center; 
+}
+.line6{
+    flex: 1;  
+}
+
+
 #horizontalLineLeft{ 
+    background-color: bisque;
+    display: flex;
+    /* flex-direction: column; */
+    /* padding-bottom: 20% !important; */
+    /* margin-top: 20%; */
     border-bottom: 4px solid rgba(0, 0, 0, 0.25);
     width: 255px; 
     /* margin-left: 15px; */
