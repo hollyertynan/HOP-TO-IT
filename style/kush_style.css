@@ -16,18 +16,45 @@ Example Naming Style:
 Credit:
 */
 
+#profile{
+    margin-left: 170px !important;
+    margin-top: -5px;
+}
 
-*/
+#name{
+    color: black;
+    font-size: 50px !important;
+    margin-left: 300px;
+    margin-top: -40px !important;
+}
 
- 
+#notifications{
+    margin-left: -300px;
+    margin-top: -30px;
+}
+
+#messages{
+    margin-left: -170px;
+    margin-top: -30px;
+}
+
+#logoutPic{
+    margin-left: -50px;
+    margin-top: -30px;
+
+}
 
 .kush-navbar-color{
     /* position: absolute;
     margin-left: -8px; */
     background-color: rgb(73, 190, 183);
     color: rgb(73, 190, 183);
-    /* height: 94px; */
+    /* height: 4px; */
     width: 100%;
+}
+
+.text-end{
+    height: 50px;
 }
 
 
@@ -40,51 +67,25 @@ Credit:
     /* position: absolute; */
     /* margin-top: 15px; */
     /* margin-left: 100px; */
-    /* height: 56px;
-    width: 400px; */
+    /* height: 56px;*/
+    width: 500px;
     border-radius: 35px;
     z-index: 1;
     
 }
  
-#name{
-    color: black;
-    font-size: 28px;
-    /* margin-left: 1000px;
-    margin-top: -50px; */
+
+
+h3{
+    font-size: 20px;
 }
 
 
 #logo{
     cursor: pointer;
     width: auto;
-    max-width: 200px;
+    max-width: 100px;
 }
-
-
-/* #notifications{
-    position:absolute;
-    margin-top: -37px;
-    margin-left: -37px;
-    height: 75px;
-    width: 75px;
-    cursor: pointer;
-    z-index: -1;
-} */
-
-
-/*
-#message{
-    position: absolute;
-    margin-top: -37px;
-    margin-left: -37px;
-    height: 75px;
-    width: 75px;
-    cursor: pointer;
-    z-index: -1;
-
-}*/
-
 
 #dropdown{
     position: absolute;
@@ -97,34 +98,6 @@ Credit:
 
 }
 
-
-
-
-/*
-.dropbutton {
-    position:absolute;
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    height: 75px;
-    width: 75px;
-    margin-top: -82px;
-    margin-left: 1375px;
-    border-radius: 37px;
-    
-  }
-  
-  .dropbutton:hover, .dropbutton:focus {
-    background-color: #2980B9;
-  }
-  
-  .dropdownLast {
-    position: relative;
-    display: inline-block;
-  }*/
   
   .dropdown-content {
     display: none;
@@ -132,7 +105,7 @@ Credit:
     background-color: white;
     width: 350px;
     height: 200px;
-    margin-left: -13.5%;
+    margin-left: -17.1%;
     margin-top: -7.5% !important;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -167,50 +140,14 @@ Credit:
       background-color: rgb(157, 193, 231) ;
   }
 
-  #cancel{
-      float:right;
-      font-size: 25px;
-      font-weight: bold;
-      font-weight: bold;
-      margin-top: 120px;
-      margin-right: 50px;
-      padding: 10px;
-      border-radius: 20px;
-      padding-left: 25px;
-      padding-right: 25px;
-      box-shadow: 0px 2px 2px 3px rgba(1, 1, 1, 0.219);
-  }
-
-
-/*
-.messageButton {
-    position:absolute;
-    background-color: #db349b;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    height: 75px;
-    width: 75px;
-    margin-top: -82px;
-    margin-left: 1290px;
-    border-radius: 37px;
-}
-
-.dropdownMiddle {
-    position: relative;
-    display: inline-block;
-}*/
-
 .message-content {
     display: none;
     position: absolute;
     background-color: white;
     width: 600px;
     height: 450px;
-    margin-left: -24%;
-    margin-top: 8% !important;
+    margin-left: -32%;
+    margin-top: 12.5% !important;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -346,22 +283,12 @@ Credit:
     background-color: white;
     width: 22.5%;
     height: 550px;
-    margin-left: -0.5% !important;
+    margin-left: -13% !important;
     /*margin-top: -82px !important; */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 10px;
 }
-
-/* #secondBox{
-    background-color: red;
-    position: absolute;
-    width: 350px;
-    height: 600px;
-    margin-left: 0px;
-    margin-top: 50px !important;
-} */
-
 
 #notificationsTab{
     position: absolute;
@@ -397,14 +324,6 @@ Credit:
     font-weight: bold; */
 }
 
-/* #online{
-    position: absolute;
-    font-size: 36px;
-    color: black;
-    margin-top: 170px;
-    margin-left: 15px;
-    font-weight: bold;
-} */
 
 /* #verticalLineLeft{
     border-right: 1px solid rgba(0, 0, 0, 0.25);
@@ -456,74 +375,7 @@ Credit:
 .show {
     display: block !important;
 } 
-
-/* #noti{
-    display: block;
-} */ 
-
-.kush-navbar-color{
-    /* position: absolute;
-    margin-left: -8px; */
-    background-color: rgb(73, 190, 183);
-    color: rgb(73, 190, 183);
-    /* height: 94px; */
-    width: 100%;
-}
-
-
-
-.kush-button-hover:hover{
-    cursor: pointer;
-}
  
-#search{
-    /* position: absolute; */
-    /* margin-top: 15px; */
-    /* margin-left: 100px; */
-    /* height: 56px;
-    width: 400px; */
-    border-radius: 35px;
-    z-index: 1;
-    
-}
- 
-#name{
-    color: black;
-    font-size: 28px;
-    /* margin-left: 1000px;
-    margin-top: -50px; */
-}
-
-
-#logo{
-    cursor: pointer;
-    width: auto;
-    max-width: 200px;
-}
-
-
-/* #notifications{
-    position:absolute;
-    margin-top: -37px;
-    margin-left: -37px;
-    height: 75px;
-    width: 75px;
-    cursor: pointer;
-    z-index: -1;
-} */
-
-
-/*
-#message{
-    position: absolute;
-    margin-top: -37px;
-    margin-left: -37px;
-    height: 75px;
-    width: 75px;
-    cursor: pointer;
-    z-index: -1;
-
-}*/
 
 
 #dropdown{
@@ -536,76 +388,6 @@ Credit:
     z-index: -1;    
 
 }
-
-
-
-
-/*
-.dropbutton {
-    position:absolute;
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    height: 75px;
-    width: 75px;
-    margin-top: -82px;
-    margin-left: 1375px;
-    border-radius: 37px;
-    
-  }
-  
-  .dropbutton:hover, .dropbutton:focus {
-    background-color: #2980B9;
-  }
-  
-  .dropdownLast {
-    position: relative;
-    display: inline-block;
-  }*/
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    width: 350px;
-    height: 200px;
-    margin-left: -13.5%;
-    margin-top: -7.5% !important;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdownLast a:hover {background-color: #ddd;}
-  
-
-  #logout{
-      float:right;
-      font-weight: bold;
-      font-size: 25px;
-      margin-top: 120px;
-      margin-right: 30px;
-      padding: 10px;
-      padding-left: 25px;
-      padding-right: 25px;
-      border-radius: 20px;
-      border-radius: 20px;
-      background-color: rgb(226,240,255);
-      box-shadow: 0px 2px 2px 3px rgba(1, 1, 1, 0.219);
-  }
-
-  #logout:hover{
-      background-color: rgb(157, 193, 231) ;
-  }
 
   #cancel{
       float:right;
@@ -625,216 +407,11 @@ Credit:
       background-color: rgb(158, 155, 155);
   }
 
-
-/*
-.messageButton {
-    position:absolute;
-    background-color: #db349b;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    height: 75px;
-    width: 75px;
-    margin-top: -82px;
-    margin-left: 1290px;
-    border-radius: 37px;
-}
-
-.dropdownMiddle {
-    position: relative;
-    display: inline-block;
-}*/
-
-.message-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    width: 600px;
-    height: 450px;
-    margin-left: -24%;
-    margin-top: 8% !important;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-
-.message-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-#messageBar{
-    position: absolute;
-    text-align: center;
-    background-color: rgb(248, 244, 244);
-    width: 272px;
-    height: 60px;
-}
-
-#goBack{
-    position: absolute;
-    height: 60px;
-    width: 40px;
-    margin-left: -136px;
-}
-
-#goBack:hover{
-    cursor: pointer;
-}
-
-#friend{
-    position: absolute;
-    color: black;
-    font-size: 36px;
-    margin-left: 60px;
-    margin-top: 8px;
-    
-}
-
-#messageBox{
-    position: absolute;
-    text-align: center;
-    background-color: rgb(248, 244, 244);
-    width: 272px;
-    height: 60px;
-    margin-top: 50px;
-}
-
-#searchMessages{
-    font-size: 22px;
-    position: absolute;
-    text-align: center;
-    margin-top: 60px;
-    margin-left: -136px;
-    width: 272px;
-    height: 50px;
-    border: 1px solid black;
-}
-
-#friend1{
-    background-color: rgb(222,222,222);
-    position: absolute;
-    margin-top: 110px;
-    width: 272px;
-    height: 80px;
-}
-
-#friendOne{
-    color: black;
-    font-size: 24px;
-    margin-right: 100px;
-    margin-top: 10px;
-}
-
-#dateOne{
-    font-size: 18px;
-    color: black;
-    margin-top: -50px;
-    margin-left: 200px;
-}
-
-#textBox{
-    position: absolute;
-    background-color: rgb(220, 220, 220);
-    margin-left: 272px;
-    height: 450px;
-    width: 328px;
-
-}
-
-#typeMessage{
-    font-size: 20px;
-    color: black;
-    background-color: white;
-    position: absolute;
-    width: 328px;
-    height: 50px;
-    margin-left: -28px;
-    margin-top: 400px;
-    border: 1px solid black;
-}
-
-#send{
-    position: absolute;
-    height: 45px;
-    width: 45px;
-    margin-left: 254px;
-    margin-top: 402px;
-}
-
-#send:hover{
-    cursor: pointer;
-}
-
-
-#compose{
-    position: absolute;
-    margin-left: 85px;
+#notifications, #messages, #logoutPic{
     height: 60px;
     width: 60px;
 }
-
-#compose:hover{
-    cursor: pointer;
-
-}
-
-
-.notification-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    width: 22.5%;
-    height: 550px;
-    margin-left: -0.5% !important;
-    /*margin-top: -82px !important; */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 10px;
-}
-
-/* #secondBox{
-    background-color: red;
-    position: absolute;
-    width: 350px;
-    height: 600px;
-    margin-left: 0px;
-    margin-top: 50px !important;
-} */
-
-
-#notificationsTab{
-    position: absolute;
-    font-size: 20px;
-    text-decoration: underline pink;
-    /* margin-top: 1px;
-    margin-left: 4px; */
-}
-
-#exitNoti{
-    position: absolute;
-    height:35px;
-    width: 35px;
-    /* margin-top: 1px;*/
-    margin-left: 138px; 
-}
-
-#exitNoti:hover{
-    cursor: pointer;
-}
    
-.notification-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-
 #online{
     font-size: 36px;
     color: black;
@@ -888,50 +465,6 @@ Credit:
 }
 
 
-
-
-#verticalLineLeft{
-    /* background-color: aqua; */
-    display: flex;
-    /* flex-direction: column; */
-    border-right: 1px solid rgba(0, 0, 0, 0.25);
-    height: 520px;
-    /* float: right; */
-    /* margin-left: 50px;
-    margin-top: -25px !important; */
-}
-
-/*#verticalLineRigth{ 
-    border-right: 1px solid rgba(0, 0, 0, 0.25);
-    height: 520px;
-    margin-top: -25px !important;
-    
-} */
-
-
-
-
-
-#horizontalLineLeft{ 
-    /* background-color: bisque; */
-    display: flex;
-    /* flex-direction: column; */
-    /* padding-bottom: 20% !important; */
-    /* margin-top: 20%; */
-    border-bottom: 4px solid rgba(0, 0, 0, 0.25);
-    width: 255px; 
-    /* margin-left: 15px; */
-    /* margin-top: 250px !important;  */
-}
-
-/* #horizontalLineMiddle{
-    position:fixed;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.55);
-    width: 896px; 
-    margin-left: 305px;
-    margin-top: 335px !important; 
-}  */
-
 /*#invite{
     position: absolute;
     margin-top: 30px;
@@ -950,6 +483,3 @@ Credit:
     cursor: pointer;
 }*/
   
-.show {
-    display: block !important;
-} 
