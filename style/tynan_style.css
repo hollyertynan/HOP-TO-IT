@@ -24,3 +24,7 @@ Credit:
 .tynan-button-hover:hover {
     opacity: 75%;
 }
+
+.tynan_ul {
+    list-style-type: none;
+}
