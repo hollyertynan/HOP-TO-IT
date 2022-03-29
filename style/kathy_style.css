@@ -8,10 +8,33 @@ Description: CSS file for Kathy's CSS documentation.
 Example Naming Style:
 
 .tynan-navbar-color {
-    background-color: #49beb7;
+    background-color: #49beb7; 
+}*/
+
+.row {
+    padding-top: 20px;
 }
 
+.col-md-8 {
+    font-size: xxx-large;
+    font-weight: bold;
+    color: rgb(245, 144, 28);
+}
+
+.col-6 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.col-md-4 {
+    font-size: small;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.list-group {
+    font-size: small;
+}
+
+/*
 Please try and indicate what is yours by putting your name in the names of classes. This way it's easiest to track down issues. 
 
-Credit:
-*/
+Credit: Kathy*/
