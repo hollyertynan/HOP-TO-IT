@@ -78,12 +78,17 @@ Credit:
           
         <!-- Columns are always 50% wide, on mobile and desktop -->
         <div class="row">
-            <div class="col-6";>
-                <div class="thumbnail">
+            <div class="col-6">
+            <!--    <div class="thumbnail">
                     <a href="assets/map.jpg">
-                      <img src="assets/map.jpg" alt="map" style="width:90%">
+                        <div class="container-fluid"></div>
+                        <img src="assets/map.jpg" alt="map" style="width:90%">
+                        <div id="googleMap"></div>
                     </a>
-                  </div>
+                  </div> -->
+                <div class="container-fluid">
+                    <div id="googleMap"></div>
+                </div>
             </div>
             <div class="col-6">
                     <div class="row">
@@ -191,6 +196,9 @@ Credit:
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJrHm5bnHCthxbxf5ZnuZvB56jnNN4a5I&callback=myMap"></script>
+    <script src="./script/map.js"></script>
 
     <script defer src="script/kathy_script.js"></script>
 </body>
