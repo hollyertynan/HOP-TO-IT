@@ -354,41 +354,11 @@ h3{
     margin-top: 335px !important; 
 }  */
 
-/*#invite{
-    position: absolute;
-    margin-top: 30px;
-    margin-left: 1050px;
-}
-
-#inviteButton{
-    background-color: rgb(226,240,255);
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: none;
-}
-
-#inviteButton:hover{
-    cursor: pointer;
-}*/
   
 .show {
     display: block !important;
 } 
  
-
-
-#dropdown{
-    position: absolute;
-    margin-top: -37px;
-    margin-left: -37px;
-    height: 75px;
-    width: 75px;
-    cursor: pointer;
-    z-index: -1;    
-
-}
-
   #cancel{
       float:right;
       font-size: 25px;
@@ -447,9 +417,10 @@ h3{
 }
 
 .box2{
-    height: 375px;
+    height: 425px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.55);
     align-content: center;
+    /* background-color: aqua; */
 }
 
 .box3{
@@ -457,29 +428,26 @@ h3{
 }
 
 #map{
-    height: 400px;
+    height: 350px;
     width: 100%;
     text-align: center;
     font-size: 50px;
+    /* background-color: black; */
     /* align-content: center; */
 }
 
 
-/*#invite{
-    position: absolute;
-    margin-top: 30px;
-    margin-left: 1050px;
-}
-
-#inviteButton{
+#invite{
     background-color: rgb(226,240,255);
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
     border: none;
+    float:right;
 }
 
-#inviteButton:hover{
+#invite:hover{
     cursor: pointer;
-}*/
+    background-color: rgb(127, 147, 168);
+}
   

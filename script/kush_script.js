@@ -91,6 +91,9 @@ cancelButton.addEventListener("click", logoutDropdown)
 const exitButton = document.querySelector("#exitNoti")
 exitButton.addEventListener("click", notificationsDropdown)
 
+const backButton = document.querySelector("#goBack")
+backButton.addEventListener("click", messageDropdown)
+
 // const logButton = document.querySelector("#logout")
 // logButton.addEventListener("click", window.location("index.html"))
 
@@ -137,3 +140,14 @@ const dateOne = document.createElement("p");
 dateOne.innerHTML = "Date 1";
 document.getElementById("friend1").appendChild(dateOne);
 dateOne.id = "dateOne";
+
+// if(person == online){
+//   const friendOn = document.createElement("p");
+//   friendOn.innerHTML = "Kush";
+//   document.getElementById("friendOnline").appendChild(friendOn);
+// }
+
+// const info = document.createElement("p")
+// info.innerHTML = "... Pick-Up journey has started, with ... stops and ...!"
+// document.getElementById("quickInfo").appendChild(info);
+
