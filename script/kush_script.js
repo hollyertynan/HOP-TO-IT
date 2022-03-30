@@ -99,13 +99,14 @@ backButton.addEventListener("click", messageDropdown)
 
 
 
-// function initMap(){
-//   var options = {
-//      zoom: 8,
-//      center: {lat:30,lng:30}
-//   }
-//   var map = new google.maps.Map(document.getElementById('map'), options)
-// }
+// var LatLng = { lat: 42.3601, lng: -71.0589 };
+// var mapOptions = {
+//     center: LatLng,
+//     zoom: 9,
+//     mapTypeId: google.maps.MapTypeId.ROADMAP
+// };
+
+// var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions)
 
 
 
@@ -141,13 +142,43 @@ dateOne.innerHTML = "Date 1";
 document.getElementById("friend1").appendChild(dateOne);
 dateOne.id = "dateOne";
 
+
+const profilePicTL = document.createElement("img")
+profilePicTL.src = "assets/navbar/profile_blank.webp"
+profilePicTL.id = "infoPicTL"
+document.getElementById("tlpic").appendChild(profilePicTL) 
+
+// const profileName = document.createElement("p")
+// profileName = "Your Name"
+// document.getElementById("tlpic").append(profileName)
+
+
 // if(person == online){
 //   const friendOn = document.createElement("p");
 //   friendOn.innerHTML = "Kush";
 //   document.getElementById("friendOnline").appendChild(friendOn);
 // }
 
-// const info = document.createElement("p")
-// info.innerHTML = "... Pick-Up journey has started, with ... stops and ...!"
-// document.getElementById("quickInfo").appendChild(info);
+
+
+
+const friendJourney = document.createElement("p")
+friendJourney.innerHTML = "... journey is going on, with ... stops left."
+document.getElementById("otherJourneys").appendChild(friendJourney)
+
+
+
+
+
+
+
+
+const profilePic = document.createElement("img")
+profilePic.src = "assets/navbar/profile_blank.webp"
+profilePic.id = "infoPic"
+// document.getElementById("quickInfo").appendChild(profilePic) 
+
+const info = document.createElement("p")
+info.innerHTML =  profilePic + "... Pick-Up journey has started, with ... stops and ...!"
+document.getElementById("quickInfo").appendChild(info);
 
