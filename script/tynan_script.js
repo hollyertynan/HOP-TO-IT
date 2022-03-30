@@ -1,7 +1,7 @@
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
-    document.getElementById("g-signin2").innerHTML = "<h1>" + profile.getName() + "</h1>";
-    document.getElementById("g-signin2").innerHTML += "<img src='" + profile.getImageUrl() + "' alt='Profile Picture'>";
+    document.getElementById("remove_signin").innerHTML = "<h1>" + profile.getName() + "</h1>";
+    document.getElementById("remove_signin").innerHTML += "<img src='" + profile.getImageUrl() + "' alt='Profile Picture'>";
 }
 
 // sign out link
