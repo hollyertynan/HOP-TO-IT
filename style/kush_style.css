@@ -324,37 +324,13 @@ h3{
     font-weight: bold; */
 }
 
-
-/* #verticalLineLeft{
-    border-right: 1px solid rgba(0, 0, 0, 0.25);
-    height: 520px;
-    margin-left: 50px;
-    margin-top: -25px !important;
-}
-
-#verticalLineRigth{ 
-    border-right: 1px solid rgba(0, 0, 0, 0.25);
-    height: 520px;
-    margin-top: -25px !important;
-    
-} */
-
 #horizontalLineLeft{ 
     border-bottom: 4px solid rgba(0, 0, 0, 0.25);
     width: 255px; 
     /* margin-left: 15px; */
     /* margin-top: 250px !important;  */
 }
-
-/* #horizontalLineMiddle{
-    position:fixed;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.55);
-    width: 896px; 
-    margin-left: 305px;
-    margin-top: 335px !important; 
-}  */
-
-  
+ 
 .show {
     display: block !important;
 } 
@@ -404,6 +380,7 @@ h3{
 
 .middle{
     flex:2.5;
+    /* background-color: yellow; */
 }
 
 .right{
@@ -417,8 +394,8 @@ h3{
 }
 
 .box2{
-    height: 425px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.55);
+    height: 440px;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.55); */
     align-content: center;
     /* background-color: aqua; */
 }
@@ -428,26 +405,76 @@ h3{
 }
 
 #map{
-    height: 350px;
-    width: 100%;
+    height: 80%;
+    width: 70%;
     text-align: center;
     font-size: 50px;
     /* background-color: black; */
     /* align-content: center; */
 }
 
+#inviteBox{
+    display: flex;
+    /* background-color: blue; */
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.55); */
+    justify-content: space-between;
+
+}
 
 #invite{
     background-color: rgb(226,240,255);
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
     border: none;
-    float:right;
+    /* width: px; */
+    display: inline-block;
+    border-radius: 10px;
 }
 
 #invite:hover{
     cursor: pointer;
     background-color: rgb(127, 147, 168);
 }
+
+#topSpace{
+    height: 90px;
+}
+
+#space{
+    height: 20px;
+    /* background-color: aqua; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.55);
+
+}
+
+#spaceTL{
+    height: 20px;
+}
+
+#infoPic, #infoPicTL{
+    height: 50px;
+    width: 50px;
+}
   
+#quickInfo{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#spaceJourney{
+    height: 25px;
+}
+
+#otherJourneys{
+    text-align: center;
+    /* font-weight: bold; */
+    font-size: 16px;
+
+}
+
+#example{
+    height: 300px;
+    width: 500px;
+}
