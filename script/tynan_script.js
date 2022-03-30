@@ -6,6 +6,9 @@ function onSignIn(googleUser) {
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 }
 
+document.getElementById("tynan_yourName").innerHTML = "<h1>" + googleUser.getBasicProfile().getName() + "</h1>";
+document.getElementById("googleProfilePicture").innerHTML = "<img src='" + googleUser.getBasicProfile().getImageUrl() + "' alt='Profile Picture'>";
+
 // sign out link
 // <a href="#" onclick="signOut();">Sign out</a>
 function signOut() {
