@@ -13,6 +13,7 @@ Example Naming Style:
 
 .row {
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .col-md-8 {
@@ -34,6 +35,10 @@ Example Naming Style:
     font-size: small;
 }
 
+.list-group-item-info {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 /*
 Please try and indicate what is yours by putting your name in the names of classes. This way it's easiest to track down issues. 
 
