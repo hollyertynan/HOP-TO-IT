@@ -149,7 +149,7 @@ profilePicTL.id = "infoPicTL"
 document.getElementById("tlpic").appendChild(profilePicTL) 
 
 // const profileName = document.createElement("p")
-// profileName = "Your Name"
+// profileName.innerHTML = "Your Name"
 // document.getElementById("tlpic").append(profileName)
 
 
@@ -159,12 +159,22 @@ document.getElementById("tlpic").appendChild(profilePicTL)
 //   document.getElementById("friendOnline").appendChild(friendOn);
 // }
 
+const profilePicBL = document.createElement("img")
+profilePicBL.src = "assets/navbar/profile_blank.webp"
+profilePicBL.id = "blpic"                                           //online friends
+document.getElementById("friendsOnline").appendChild(profilePicBL)
 
+
+const viewButton = document.createElement("button")
+viewButton.innerHTML = "View"                                       //view button
+// document.getElementById("otherJourneys").appendChild(viewButton)
 
 
 const friendJourney = document.createElement("p")
 friendJourney.innerHTML = "... journey is going on, with ... stops left."
 document.getElementById("otherJourneys").appendChild(friendJourney)
+// document.getElementById("otherJourneys").appendChild(viewButton)
+
 
 
 
@@ -179,6 +189,11 @@ profilePic.id = "infoPic"
 // document.getElementById("quickInfo").appendChild(profilePic) 
 
 const info = document.createElement("p")
-info.innerHTML =  profilePic + "... Pick-Up journey has started, with ... stops and ...!"
+info.innerHTML =  /*profilePic + */"... Pick-Up journey has started, with ... stops and ...!"
 document.getElementById("quickInfo").appendChild(info);
 
+
+const messageButton = document.createElement("button")
+messageButton.innerHTML = "Friend";
+messageButton.id = "friendsButton"
+document.getElementById("messagesSide").appendChild(messageButton)
