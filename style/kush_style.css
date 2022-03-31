@@ -18,30 +18,30 @@ Credit:
 
 #profile{
     margin-left: 550% !important;
-    margin-top: -15%;
+    margin-top: 19% !important;
 }
 
 #name{
     color: black;
-    font-size: 50px !important;
+    font-size: 3.5vw !important;
     margin-left: 170%;
     margin-top: -20% !important;
 }
 
 #notifications{
     margin-left:675%;
-    margin-top: -100% !important;
+    margin-top: -40% !important;
 }
 
 #messages{
     margin-left: 695%;
-    margin-top: -100% !important;
+    margin-top: -40% !important;
 
 }
 
 #logoutPic{
     margin-left:715%;
-    margin-top: -100% !important;
+    margin-top: -40% !important;
 
 
 }
@@ -105,7 +105,7 @@ h3{
 
   
   .dropdown-content {
-    /* display: none; */
+    display: none;
     position: absolute;
     background-color: white;
     width: 25%;
@@ -336,9 +336,6 @@ h3{
     /* margin-top: 250px !important;  */
 }
  
-.show {
-    display: block !important;
-} 
  
   #cancel{
       float:right;
@@ -501,7 +498,7 @@ h3{
 #messagesSide{
     text-align: center;
     height: 4.3em;
-    background-color: black;
+    /* background-color: black; */
 }
 
 #friendsButton{
@@ -517,3 +514,7 @@ h3{
     font-weight: bold;
     
 }
+
+.show {
+    display: block !important;
+} 
