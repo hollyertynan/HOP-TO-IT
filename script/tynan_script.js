@@ -15,6 +15,8 @@ function onLoad() {
   document.getElementById("add_name").innerHTML = "<img class=\"img-fluid ms-4 mx-auto rounded-circle\" style=\"max-width: 50px\" src='" + saveProfileImage + "' alt='Profile Picture'>";
 }
 
+//extra push 
+
 // sign out link
 // <a href="#" onclick="signOut();">Sign out</a>
 function signOut() {
