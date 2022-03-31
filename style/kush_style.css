@@ -17,30 +17,32 @@ Credit:
 */
 
 #profile{
-    margin-left: 170px !important;
-    margin-top: -12px;
+    margin-left: 550% !important;
+    margin-top: -15%;
 }
 
 #name{
     color: black;
     font-size: 50px !important;
-    margin-left: 300px;
-    margin-top: -40px !important;
+    margin-left: 170%;
+    margin-top: -20% !important;
 }
 
 #notifications{
-    margin-left: -300px;
-    margin-top: -75px;
+    margin-left:675%;
+    margin-top: -100% !important;
 }
 
 #messages{
-    margin-left: -170px;
-    margin-top: -75px;
+    margin-left: 695%;
+    margin-top: -100% !important;
+
 }
 
 #logoutPic{
-    margin-left: -50px;
-    margin-top: -75px;
+    margin-left:715%;
+    margin-top: -100% !important;
+
 
 }
 
@@ -54,7 +56,9 @@ Credit:
 }
 
 .text-end{
-    height: 50px;
+    /* height: 50px; */
+    height: 3.5rem;
+    /* background-color: aqua; */
 }
 
 
@@ -68,7 +72,7 @@ Credit:
     /* margin-top: -15px; */
     /* margin-left: 100px; */
     /* height: 56px;*/
-    width: 500px;
+    width: 250%;
     border-radius: 35px;
     z-index: 1;
     
@@ -77,7 +81,7 @@ Credit:
 
 
 h3{
-    font-size: 20px;
+    font-size: 40%;
 }
 
 
@@ -88,7 +92,7 @@ h3{
     /* margin-top: -15px; */
 }
 
-#dropdown{
+/* #dropdown{
     position: absolute;
     margin-top: -37px;
     margin-left: -37px;
@@ -97,17 +101,17 @@ h3{
     cursor: pointer;
     z-index: -1;    
 
-}
+} */
 
   
   .dropdown-content {
-    display: none;
+    /* display: none; */
     position: absolute;
     background-color: white;
-    width: 350px;
-    height: 200px;
-    margin-left: -17.1%;
-    margin-top: -7.5% !important;
+    width: 25%;
+    height: 260%;
+    margin-left: 19.3%;
+    margin-top: -8% !important;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
@@ -145,9 +149,9 @@ h3{
     display: none;
     position: absolute;
     background-color: white;
-    width: 600px;
-    height: 450px;
-    margin-left: -32%;
+    width: 39%;
+    height: 625%;
+    margin-left: 11%;
     margin-top: 11.5% !important;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -283,8 +287,8 @@ h3{
     position: absolute;
     background-color: white;
     width: 22.5%;
-    height: 550px;
-    margin-left: -13% !important;
+    height: 700%;
+    margin-left: 33% !important;
     /*margin-top: -82px !important; */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -327,7 +331,7 @@ h3{
 
 #horizontalLineLeft{ 
     border-bottom: 4px solid rgba(0, 0, 0, 0.25);
-    width: 255px; 
+    width: 60%; 
     /* margin-left: 15px; */
     /* margin-top: 250px !important;  */
 }
@@ -355,12 +359,12 @@ h3{
   }
 
 #notifications, #messages, #logoutPic{
-    height: 60px;
-    width: 60px;
+    height: 4rem;
+    width: 4rem;
 }
    
 #online{
-    font-size: 36px;
+    font-size: 2.5rem;
     color: black;
     font-weight: bold;
 }
@@ -371,7 +375,7 @@ h3{
 
 .box{
     /* border: 1px solid black; */
-    height: 595px;
+    /* height: 595px; */
 }
 
 .left{
@@ -391,18 +395,18 @@ h3{
 }
 
 .box1{
-    height: 260px;
+    height: 42%;
 }
 
 .box2{
-    height: 440px;
+    height: 80%;
     /* border-bottom: 1px solid rgba(0, 0, 0, 0.55); */
     align-content: center;
     /* background-color: aqua; */
 }
 
 .box3{
-    height: 300px;
+    height: 50%;
 }
 
 .box5{
@@ -443,57 +447,61 @@ h3{
 }
 
 #topSpace{
-    height: 90px;
+    /* height: 90px; */
+    height: 5rem;
+    /* height: 20%; */
 }
 
 #space{
-    height: 20px;
+    height: 7%;
     /* background-color: aqua; */
     border-bottom: 1px solid rgba(0, 0, 0, 0.55);
 
 }
 
 #spaceOnline{
-    height: 15px;
+    height: 1rem;
 }
 
 #spaceTL{
-    height: 20px;
+    height: 2%;
 }
 
 #infoPic, #infoPicTL, #blpic{
-    height: 50px;
-    width: 50px;
+    height: 3rem;
+    width: 3rem;
 }
   
 #quickInfo{
     text-align: center;
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 #spaceJourney{
-    height: 25px;
+    height: 2rem;
 }
 
 #otherJourneys{
     /* display: inline-block; */
     text-align: center;
     /* font-weight: bold; */
-    font-size: 20px;
+    font-size: 1.2rem;
     /* background-color: red; */
 
 }
 
 #example{
-    height: 300px;
-    width: 500px;
+    /* height: 300px;
+    width: 500px; */
+    height: 85%;
+    width: 78%;
 }
 
 #messagesSide{
     text-align: center;
-    height: 50px;
-    /* background-color: black; */
+    height: 4.3em;
+    background-color: black;
 }
 
 #friendsButton{
@@ -501,11 +509,11 @@ h3{
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    width: 200px;
-    height: 65px;
+    width: 55%;
+    height: 95%;
     border-radius: 25px;
     box-shadow: 0px 3px 0px 0px #888888;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: bold;
     
 }
