@@ -29,7 +29,6 @@ function logoutDropdown()
   }
   else{
     console.log("else");
-
     select.style.display = "block"
   }
   console.log(select)
@@ -174,13 +173,6 @@ const friendJourney = document.createElement("p")
 friendJourney.innerHTML = "... journey is going on, with ... stops left."
 document.getElementById("otherJourneys").appendChild(friendJourney)
 // document.getElementById("otherJourneys").appendChild(viewButton)
-
-
-
-
-
-
-
 
 
 const profilePic = document.createElement("img")
