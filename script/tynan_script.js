@@ -10,10 +10,10 @@ function onSignIn(googleUser) {
     saveProfileName = profile.getName();
 }
 
-function onLoad() {
-  document.getElementById("remove_signin").innerHTML = "<h5 class=\"my-auto mx-auto\">" + saveProfileName + "</h5>";
-  document.getElementById("add_name").innerHTML = "<img class=\"img-fluid ms-4 mx-auto rounded-circle\" style=\"max-width: 50px\" src='" + saveProfileImage + "' alt='Profile Picture'>";
-}
+//function onLoad() {
+//  document.getElementById("remove_signin").innerHTML = "<h5 class=\"my-auto mx-auto\">" + saveProfileName + "</h5>";
+//  document.getElementById("add_name").innerHTML = "<img class=\"img-fluid ms-4 mx-auto rounded-circle\" style=\"max-width: 50px\" src='" + saveProfileImage + "' alt='Profile Picture'>";
+//}
 
 //extra push 
 
