@@ -30,7 +30,7 @@ Credit:
     <link rel="icon" href="assets/icon.ico">
 </head>
 
-<body onload="onSignIn()">
+<body>
     <nav class="navbar navbar-expand-lg navbar-dark tynan-navbar-color">
         <div class="container-fluid">
             <a class="navbar-brand ps-3" href="../HOP-TO-IT/" style="width: 100px"><img class="img-fluid"
@@ -48,7 +48,7 @@ Credit:
                             <div id="add_name"><img class="img-fluid ms-4 mx-auto rounded-circle" style="max-width: 50px" src='assets/tempprofilepic.jpg' alt='Profile Picture'></div>
                         </li>
                         <li class="nav-item my-auto px-1">
-                            <div class="g-signin2" id="remove_signin"><h5 class="my-auto mx-auto">Hosico</h5></div>
+                            <div class="g-signin2" data-onsuccess="onSignIn" id="remove_signin"></div>
                         </li>
                     </ul>
                     
