@@ -18,7 +18,7 @@ Credit:
 
 #profile{
     margin-left: 170px !important;
-    margin-top: -5px;
+    margin-top: -12px;
 }
 
 #name{
@@ -30,17 +30,17 @@ Credit:
 
 #notifications{
     margin-left: -300px;
-    margin-top: -30px;
+    margin-top: -75px;
 }
 
 #messages{
     margin-left: -170px;
-    margin-top: -30px;
+    margin-top: -75px;
 }
 
 #logoutPic{
     margin-left: -50px;
-    margin-top: -30px;
+    margin-top: -75px;
 
 }
 
@@ -65,7 +65,7 @@ Credit:
  
 #search{
     /* position: absolute; */
-    /* margin-top: 15px; */
+    /* margin-top: -15px; */
     /* margin-left: 100px; */
     /* height: 56px;*/
     width: 500px;
@@ -85,6 +85,7 @@ h3{
     cursor: pointer;
     width: auto;
     max-width: 100px;
+    /* margin-top: -15px; */
 }
 
 #dropdown{
@@ -147,7 +148,7 @@ h3{
     width: 600px;
     height: 450px;
     margin-left: -32%;
-    margin-top: 12.5% !important;
+    margin-top: 11.5% !important;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -404,6 +405,10 @@ h3{
     height: 300px;
 }
 
+.box5{
+    /* display: inline-block; */
+}
+
 #map{
     height: 80%;
     width: 70%;
@@ -448,11 +453,15 @@ h3{
 
 }
 
+#spaceOnline{
+    height: 15px;
+}
+
 #spaceTL{
     height: 20px;
 }
 
-#infoPic, #infoPicTL{
+#infoPic, #infoPicTL, #blpic{
     height: 50px;
     width: 50px;
 }
@@ -468,13 +477,35 @@ h3{
 }
 
 #otherJourneys{
+    /* display: inline-block; */
     text-align: center;
     /* font-weight: bold; */
-    font-size: 16px;
+    font-size: 20px;
+    /* background-color: red; */
 
 }
 
 #example{
     height: 300px;
     width: 500px;
+}
+
+#messagesSide{
+    text-align: center;
+    height: 50px;
+    /* background-color: black; */
+}
+
+#friendsButton{
+    background-color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 200px;
+    height: 65px;
+    border-radius: 25px;
+    box-shadow: 0px 3px 0px 0px #888888;
+    font-size: 20px;
+    font-weight: bold;
+    
 }
