@@ -15,8 +15,9 @@ Please try and indicate what is yours by putting your name in the names of class
 
 Credit:
 */
-
 #googleMap {
-  width: 700px;
-  height: 400px;
+  height: 500px;
+}
+.raj-home-info {
+  background-color: rgb(216, 234, 255);
 }
