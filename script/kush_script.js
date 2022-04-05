@@ -96,6 +96,15 @@ backButton.addEventListener("click", messageDropdown)
 // const logButton = document.querySelector("#logout")
 // logButton.addEventListener("click", window.location("index.html"))
 
+const logButton = document.querySelector("#logout")
+logButton.addEventListener("click", signOut())
+
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+  });
+}
 
 
 // var LatLng = { lat: 42.3601, lng: -71.0589 };
