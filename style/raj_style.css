@@ -21,3 +21,8 @@ Credit:
 .raj-home-info {
   background-color: rgb(216, 234, 255);
 }
+#temp-account_map {
+  background-image: url("../assets/map2.jpg");
+  background-repeat: no-repeat;
+  background-size:cover
+}
