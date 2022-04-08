@@ -19,10 +19,19 @@ Credit:
   height: 500px;
 }
 .raj-home-info {
-  background-color: rgb(216, 234, 255);
+  background-color: rgb(255, 255, 255);
 }
 #temp-account_map {
   background-image: url("../assets/map2.jpg");
   background-repeat: no-repeat;
   background-size:cover
+}
+.online_status_img {
+  width: 20px;
+}
+.offline_status_img {
+  width: 17px;
+}
+.card {
+  background-color: rgb(253, 253, 253);
 }

@@ -17,4 +17,7 @@ export default class Map {
         }
         this.map = new google.maps.Map(document.getElementById(tag_key), map_options)
     }
+    getMap() {
+        return this.map
+    }
 }

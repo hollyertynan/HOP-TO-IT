@@ -8,13 +8,17 @@ Credit:
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id"
+        content="455973681356-pvr898f8edfn021ruc23con7rvl35onb.apps.googleusercontent.com">
     <title>HOP-TO-IT</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style/tynan_style.css">
     <link rel="stylesheet" href="style/kathy_style.css">
     <link rel="stylesheet" href="style/raj_style.css">
@@ -22,215 +26,201 @@ Credit:
     <link rel="stylesheet" href="style/ssuna_style.css">
 
     <link rel="icon" href="assets/icon.ico">
-    <!-- <link href="./CSS/mainpage.css" rel="stylesheet">     -->
-
-
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light kush-navbar-color">
-        <div class="container-fluid text-end">
-            <div class="row">
-                <div class="col-3 my-auto">
-                    <a class="navbar-brand" href="../HOP-TO-IT/"><img src="assets/logo" alt="logo" class="img-fluid" style="width:100px"></a>
-                </div>
-                <div class="col-6 col-xs-12 my-auto">
-                    <input id = "search" type="text" class="form-control" placeholder="Search Hop2it">
-                </div>
-                <div class="col-3">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="collapse navbar-collapse pt-3" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <div class="row">
-                            <div class="col-2"></div>
-                            <div class="col-4 text-center"><img src="assets/navbar/profile_blank.webp" alt="profileblank" style="width:50px" id = "profile"></div>
-                            <div class="col-4 my-auto text-center" id = "name"><h3>YOUR NAME</h3></div>
-                            <div class="col-2"></div>
-                        </div>
-                    </li>
+    <nav class="navbar navbar-expand-lg navbar-dark tynan-navbar-color">
+        <div class="container-fluid">
+            <a class="navbar-brand ps-3" href="../HOP-TO-IT/" style="width: 100px"><img class="img-fluid"
+                    src="assets/logo" alt="logo"></a>
+            <input id="search" type="text" class="form-control w-50" placeholder="Search Hop2it">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <ul class="list-group list-group-horizontal tynan_ul mx-auto">
+                        <li class="nav-item my-auto px-1 py-3">
+                            <div id="add_name"><img class="img-fluid ms-4 mx-auto rounded-circle"
+                                    style="max-width: 50px" src='assets/tempprofilepic.jpg' alt='Profile Picture'></div>
+                        </li>
+                        <li class="nav-item my-auto px-1">
+                            <div class="g-signin2" data-onsuccess="onSignIn" id="remove_signin"></div>
+                        </li>
+                    </ul>
 
-                    <li class="nav-item pt-3">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <div class="row">
-
-                                    <div class="col-4">
-                                      <div id = "noti container-fluid">
-                                        <img src="assets/navbar/notifications.png" alt="notification" style="width:75px" class="kush-button-hover" id = "notifications">
-                                        <div id="notificationInfo" class="notification-content">
-                                            <p id = "notificationsTab"> Notifications </p>
-                                            <img id = "exitNoti" src = "assets/navbar/exit.png">
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-4">
-                                      <div id = "message">
-                                            <img src="assets/navbar/messages.png" alt="message" style="width:75px" class="kush-button-hover" id = "messages">
-                                            <div id="messageInfo" class="message-content">
-                                              <div id = "messageBar"> 
-                                                  <img id = "goBack" src = "assets/navbar/goback.png">
-                                                  <p id = "friend"> Messages </p>
-                                                    <input type = "text" id = "searchMessages" placeholder="Search Messages">
-                                                  <div id = "friend1"> </div>
-                                                  <img id = "compose" src = "assets/navbar/compose.png">
-                                              </div>
-                                              <div id = "textBox">
-                            
-                                              </div>
-                                              <input id = "typeMessage" type = "text" placeholder="    Type Message...">
-                                              <img id = "send" src = "assets/navbar/send.png">
-                            
+                    <ul class="list-group list-group-horizontal tynan_ul mx-auto">
+                        <li class="nav-item my-auto px-1">
+                            <div class="dropstart">
+                                <button class="btn btn-transparent" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/navbar/notifications.png" class="img-fluid" style="max-width: 50px"
+                                        alt="notifications">
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton1">
+                                    <li>
+                                        <div class="card" style="width: 18rem;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Notifications</h5>
+                                                <div class="card">Hosico joined your journey.</div>
+                                                <div class="card">Hosico joined your journey.</div>
+                                                <div class="card">Hosico joined your journey.</div>
+                                                <div class="card">Hosico joined your journey.</div>
                                             </div>
-                                      </div>
-                                    </div>
-
-
-                                    <div class="col-4">
-                                      <div id = "log">
-                                            <img src="assets/navbar/arrow.png" alt="arrow" style="width:75px" class="kush-button-hover" id = "logoutPic">
-                                            <div id="dropdownInfo" class="dropdown-content">
-                                              <a id = "logout" href="index.html">logout</a>
-                                              <a id = "cancel" href="#cancel">cancel</a>
-                                            </div>
-                                      </div>
-                                    </div>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>  
-                    </li>
-
+                        </li>
+                        <li class="nav-item my-auto px-1">
+                            <div class="dropstart">
+                                <button class="btn btn-transparent" type="button" id="dropdownMenuButton2"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/navbar/messages.png" class="img-fluid" style="max-width: 50px"
+                                        alt="messages">
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton2">
+                                    <li>
+                                        <div class="card" style="width: 18rem;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Messages</h5>
+                                                <div class="card">Message</div>
+                                                <div class="card">Message</div>
+                                                <div class="card">Message</div>
+                                                <div class="card">Message</div>
+                                            </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item my-auto px-1">
+                            <div class="dropstart">
+                                <button class="btn btn-transparent" type="button" id="dropdownMenuButton3"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/navbar/arrow.png" class="img-fluid" style="max-width: 50px"
+                                        alt="logout">
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton3">
+                                    <li>
+                                        <div class="card" style="width: 18rem;">
+                                            <h5 class="card-title">Are you sure?</h5>
+                                            <a href="#" class="btn btn-primary">Logout</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
                 </ul>
             </div>
         </div>
     </nav>
-    
-    <div class="container-fluid">
-        <!-- <div class="row">
-            <div class = "col-lg-1 col-3 mx-auto">
-              <h1> MAP </h1>
-            </div>
-        </div>   -->
 
-        <!-- <div class = "row">
-          <p id = "online"> Online </p>
-          <div class = "flex-containerOne">
-                <div id="one" > 1</div>
-                <div class = "col-lg-1 d-none d-sm-block" id = "horizontalLineLeft"> </div>
-                <div class = "col-lg-1 d-none d-sm-block" id = "horizontalLineLeft"> </div>
-                <div id="three" > 3</div>
-          </div>
-
-          <div class = "col-lg-1 d-none d-sm-block flex-containerOne" id = "horizontalLineLeft"> </div>
-          <div class = "col-lg-2 d-none d-sm-block" id = "verticalLineLeft"> </div>
-          <div class = "col-lg-3 d-none d-sm-block" id = "horizontalLineMiddle"> </div>
-          <div class = "col-lg-7 d-none d-sm-block" id = "verticalLineRigth"> </div>
-        </div> -->
-
-        <div class="left box">
-            <!-- <div class = "col-lg-2 d-none d-sm-block" id = "verticalLineLeft"> </div> -->
-
-            <div class="box1">
-                <!-- <div class = "col-lg-2 d-none d-sm-block" id = "verticalLineLeft"> </div> -->
-                <div id = "spaceTL">
+    <!--Main Content-->
+    <div class="container-fluid justify-content-center vh-100 text-center">
+        <div class="row vh-100 w-100">
+            <div class="col-xxl-2 col-lg-4 col-md-3 d-none d-lg-block">
+                <!--Friend Online Status Container-->
+                <div class="w-100 h-50">
+                    <!--Insert Content Here-->
+                    <div class="card h-100 mt-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Friends Online</h5>
+                            <br>
+                            <!--Temporary Friend Status Information {TO BE REPLACED...}-->
+                            <div class="row p-0 m-0">
+                                <div class="col-sm-2 text-end"><img src="assets/online_status.png" class="online_status_img"></div>
+                                <div class="col-sm-10 text-start"><h5">Jon Favreau</h5></div>
+                            </div>
+                            <div class="row p-0 m-0">
+                                <div class="col-sm-2 text-end"><img src="assets/online_status.png" class="online_status_img"></div>
+                                <div class="col-sm-10 text-start"><h5">Robert Downey Jr.</h5></div>
+                            </div>
+                            <div class="row p-0 m-0">
+                                <div class="col-sm-2 text-end"><img src="assets/online_status.png" class="online_status_img"></div>
+                                <div class="col-sm-10 text-start"><h5">Carl Casper</h5></div>
+                            </div>
+                            <div class="row p-0 m-0">
+                                <div class="col-sm-2 text-end"><img src="assets/offline_status.png" class="offline_status_img"></div>
+                                <div class="col-sm-10 text-start"><h5">John Leguizamo</h5></div>
+                            </div>
+                            <div class="row p-0 m-0">
+                                <div class="col-sm-2 text-end"><img src="assets/offline_status.png" class="offline_status_img"></div>
+                                <div class="col-sm-10 text-start"><h5">Dustin Hoffman</h5></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id = "tlpic">
-
-                </div>
-              
-            </div>
-
-            <div class="box4">
-                <p id = "online"> Online </p>
-                <div class = "col-lg-1 d-none d-sm-block" id = "horizontalLineLeft"> </div>
-                <div id = "friendOnline">
-
-                </div>
-
-                <div id = "spaceOnline">
-
-                </div>
-
-                <div id = "friendsOnline">
-
+                <!--Notification Container-->
+                <div class="w-100 h-50 mt-1">
+                    <!--Insert Content Here-->
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Notification Bar</h5>
+                            <p class="card-text">You have no new notifications...</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- <div class = "col-lg-2 d-none d-sm-block" id = "verticalLineLeft"> </div> -->
-
-        </div>
-          
-        <div class="middle box">
-            <div class="box2">
-              <div id = "topSpace">
-                <!-- <p></p>
-                <p></p>
-                <p></p>
-                <p></p> -->
-              </div>
-              <div id = "quickInfo">
-                
-              </div>
-              <div id =  "map">
-                <img id = "example" src = "/assets/map.jpg">
-              </div>
+            <!--Google Map Container-->
+            <div class="col-xxl-8 col-lg-8 col-md-12">
+                <div class="container-fluid vh-100">
+                    <div class="vstack vh-100">
+                        <!--Insert Content Here-->
+                        <div class="row h-75">
+                            <div id="temp-account_map" class="bg-info">
+                            </div>
+                        </div>
+                        <div class="row h-25">
+                            <!--Insert Content Here-->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Toggle Menu</h5>
+                                    <form>
+                                        <div>
+                                            <label for="startlocation">Origin</label>
+                                            <input id="start_addr" class="form-control" type="text" placeholder="Address">
+                                        </div>
+                                        <div>
+                                            <label for="endlocation">Destination</label>
+                                            <input id="end_addr" class="form-control" type="text" placeholder="Address">
+                                        </div>
+                                        <button id="go-btn" type="button" class="btn btn-success btn-lg btn-block w-100 mt-4" onclick="calcRoute();">Go</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div id = "inviteBox">
-              <p> </p>
-              <p> </p>
-              <p> </p>
-              <p> </p>
-              <p> </p>
-              <p> </p>
-              <p> </p>
-              <p> </p>
-              <p> </p>
-              <button id = "invite"> Invite </button>
-              <p> </p>
-            </div>
-
-            <div id = "space">
-              <!-- <p></p> -->
-            </div>
-
-            
-    
-            <div class="box5">
-              <!-- box5 -->
-              <div id = "spaceJourney">
-                
-              </div>
-              <div id = "otherJourneys">
-
-              </div>
+            <!--Message Chat Content-->
+            <div class="col-xxl-2 col-md-12 d-none d-xxl-block vh-100">
+                <div class="card h-100 mt-3">
+                    <!--Insert Content Here-->
+                    <div class="card-body">
+                        <h5 class="card-title">Chat Menu</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's
+                            content.</p>
+                        <a href="#" class="btn btn-primary">Find a Chat Group</a>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="right box">
-            <div class="box3">
-            </div>
-    
-            <div class="box6">
-              <div id = "messagesSide">
-
-              </div>
-            </div>
-        </div>
-
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script defer src="script/kush_script.js"></script>
-    <!-- <script
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly" async
-      defer>
-    </script> -->
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Do Not Touch Unless you are specifically Testing Map Features! -->
+    <!-- Total Requests: 165 -->
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJrHm5bnHCthxbxf5ZnuZvB56jnNN4a5I&callback=myMap"></script>-->
+    <script src="./script/app.js"></script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="script/tynan_script.js"></script>
 </body>
 </html>

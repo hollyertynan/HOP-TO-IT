@@ -116,20 +116,41 @@
                 <!--Friend Online Status Container-->
                 <div class="w-100 h-50">
                     <!--Insert Content Here-->
-                    <div class="card h-100">
+                    <div class="card h-100 mt-3">
                         <div class="card-body">
-                            <h5 class="card-title">Friend Online Status Content</h5>
-                            <p class="card-text">Place Content Here</p>
+                            <h5 class="card-title">Friends Online</h5>
+                            <br>
+                            <!--Temporary Friend Status Information {TO BE REPLACED...}-->
+                            <div class="row p-0 m-0">
+                                <div class="col-sm-2 text-end"><img src="assets/online_status.png" class="online_status_img"></div>
+                                <div class="col-sm-10 text-start"><h5">Jon Favreau</h5></div>
+                            </div>
+                            <div class="row p-0 m-0">
+                                <div class="col-sm-2 text-end"><img src="assets/online_status.png" class="online_status_img"></div>
+                                <div class="col-sm-10 text-start"><h5">Robert Downey Jr.</h5></div>
+                            </div>
+                            <div class="row p-0 m-0">
+                                <div class="col-sm-2 text-end"><img src="assets/online_status.png" class="online_status_img"></div>
+                                <div class="col-sm-10 text-start"><h5">Carl Casper</h5></div>
+                            </div>
+                            <div class="row p-0 m-0">
+                                <div class="col-sm-2 text-end"><img src="assets/offline_status.png" class="offline_status_img"></div>
+                                <div class="col-sm-10 text-start"><h5">John Leguizamo</h5></div>
+                            </div>
+                            <div class="row p-0 m-0">
+                                <div class="col-sm-2 text-end"><img src="assets/offline_status.png" class="offline_status_img"></div>
+                                <div class="col-sm-10 text-start"><h5">Dustin Hoffman</h5></div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!--Notification Container-->
-                <div class="w-100 h-50">
+                <div class="w-100 h-50 mt-1">
                     <!--Insert Content Here-->
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Notification Content</h5>
-                            <p class="card-text">Place Content Here</p>
+                            <h5 class="card-title">Notification Bar</h5>
+                            <p class="card-text">You have no new notifications...</p>
                         </div>
                     </div>
                 </div>
@@ -148,8 +169,17 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Toggle Menu</h5>
-                                    <p class="card-text">Place Content Here</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <form>
+                                        <div>
+                                            <label for="startlocation">Origin</label>
+                                            <input id="start_addr" class="form-control" type="text" placeholder="Address">
+                                        </div>
+                                        <div>
+                                            <label for="endlocation">Destination</label>
+                                            <input id="end_addr" class="form-control" type="text" placeholder="Address">
+                                        </div>
+                                        <button id="go-btn" type="button" class="btn btn-success btn-lg btn-block w-100 mt-4" onclick="calcRoute();">Go</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -158,14 +188,14 @@
             </div>
             <!--Message Chat Content-->
             <div class="col-xxl-2 col-md-12 d-none d-xxl-block vh-100">
-                <div class="card h-100">
+                <div class="card h-100 mt-3">
                     <!--Insert Content Here-->
                     <div class="card-body">
                         <h5 class="card-title">Chat Menu</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's
                             content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">Find a Chat Group</a>
                     </div>
                 </div>
             </div>
@@ -180,7 +210,7 @@
     <!-- Do Not Touch Unless you are specifically Testing Map Features! -->
     <!-- Total Requests: 165 -->
     <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJrHm5bnHCthxbxf5ZnuZvB56jnNN4a5I&callback=myMap"></script>-->
-    <script src="./script/app.js" type="module"></script>
+    <script src="./script/app.js"></script>
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="script/tynan_script.js"></script>
