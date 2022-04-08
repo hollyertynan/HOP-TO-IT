@@ -15,6 +15,22 @@
 // }
 
 
+const q = document.getElementById("search");
+const google = 'https://www.google.com/search?q=site%3A+';
+const site = 'pagedart.com';
+
+function submitted(event){
+  event.preventDefault();
+  const url = google + site + '+' + q.value;
+  const win = window.open(url, '_blank');
+  win.focus();
+
+}
+
+q.addEventListener('submit', submitted);
+
+
+
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function logoutDropdown() 
@@ -75,6 +91,14 @@ function notificationsDropdown() {
   console.log("hi2noti")
 }
 
+function removeMessage(){
+  const select = document.querySelector("friendsButton");
+  if(select.style.display === "block")
+  {
+    select.style.display === "none";
+  }
+}
+
 const div_noti = document.querySelector("#notifications")
 div_noti.addEventListener("click", notificationsDropdown)
 
@@ -96,8 +120,8 @@ backButton.addEventListener("click", messageDropdown)
 // const logButton = document.querySelector("#logout")
 // logButton.addEventListener("click", window.location("index.html"))
 
-const logButton = document.querySelector("#logout")
-logButton.addEventListener("click", signOut())
+// const logButton = document.querySelector("#logout")
+// logButton.addEventListener("click", signOut())
 
 function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
@@ -105,6 +129,12 @@ function signOut() {
     console.log('User signed out.');
   });
 }
+
+// function onLoad() {
+//   gapi.load('auth2', function() {
+//     gapi.auth2.init();
+//   });
+// }
 
 
 // var LatLng = { lat: 42.3601, lng: -71.0589 };
@@ -198,3 +228,29 @@ const messageButton = document.createElement("button")
 messageButton.innerHTML = "Friend";
 messageButton.id = "friendsButton"
 document.getElementById("messagesSide").appendChild(messageButton)
+
+// const spaceInside = document.createElement("div")
+// spaceInside.id = "Insidespace";
+// document.getElementById("friendsButton").prepend(spaceInside)       //create space between profile pic and name
+
+const friendPic = document.createElement("img")
+friendPic.src = "assets/navbar/profile_blank.webp"
+friendPic.id = "picFriend"
+document.getElementById("friendsButton").prepend(friendPic)
+
+const exitFriend = document.createElement("img")
+exitFriend.src = "assets/navbar/exit.png"
+exitFriend.id = "exitPic"
+document.getElementById("friendsButton").append(exitFriend)
+
+
+// const deleteMessage = document.querySelector("exitPic")
+// deleteMessage.addEventListener("click", function(e){       //remove message on the side
+//   const parent = e.target.parentElement;
+//   parent.removeMessage;
+// })
+
+const mapInfo = document.createElement("p")
+mapInfo.innerHTML = "Some Info"
+mapInfo.id = "simpleInfo"
+document.getElementById("aboveMap").appendChild(mapInfo)

@@ -16,6 +16,7 @@ Credit:
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="455973681356-pvr898f8edfn021ruc23con7rvl35onb.apps.googleusercontent.com">
     <title>HOP-TO-IT</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -30,7 +31,7 @@ Credit:
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark tynan-navbar-color">
+    <nav class="navbar navbar-expand-lg navbar-dark kush-navbar-color">
         <div class="container-fluid">
             <a class="navbar-brand ps-3" href="../HOP-TO-IT/" style="width: 100px"><img class="img-fluid" src="assets/logo"
                     alt="logo"></a>
@@ -47,7 +48,7 @@ Credit:
                             <div id="googleProfilePicture"></div>
                         </li>
                         <li class="nav-item my-auto px-1">
-                            <h5 id="tynan_yourName">Your Name</h5>
+                            <h5 id="kush_yourName">Your Name</h5>
                         </li>
                     </ul>
 
@@ -133,7 +134,7 @@ Credit:
                 </div> -->
 
                                         <div id="dropdownInfo" class="dropdown-content">
-                                            <a id="logout" href="index.html">logout</a> <!-- POP UP CODE-->
+                                            <a id="logout" href="index.html" onclick="signOut()">logout</a> <!-- POP UP CODE-->
                                             <a id="cancel" href="#cancel">cancel</a>
                                         </div>
 
@@ -209,9 +210,20 @@ Credit:
 
                 </div>
                 <div id="map">
-                    <img id="example" src="/assets/map.jpg">
-                </div>
+                    <div id = "aboveMap">
+
+                    </div>
+
+                    <div id = "mapHolder">
+                        <img id="example" src="/assets/map.jpg">
+                        <div id = "directionsBox">
+                            <p ID = "test"> HELLO</p>
+
+                        </div>                     
+                    </div>
+                </div>               
             </div>
+
 
             <div id="inviteBox">
                 <p> </p>
@@ -261,6 +273,12 @@ Credit:
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
 
+    <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
+
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src = "https://api.kroger.com/v1/products" async defer> </script>
+    
     <script defer src="script/kush_script.js"></script>
 
 </body>
