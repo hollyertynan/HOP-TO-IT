@@ -40,7 +40,7 @@ function calcRoute() {
 }
 
 options = {
-    types: ['(cities']
+    types: ['(cities)']
 }
 
 var input1 = document.getElementById('start_addr')
@@ -48,3 +48,13 @@ autocomplete1 = new google.maps.places.Autocomplete(input1, options)
 
 var input2 = document.getElementById('end_addr')
 autocomplete2 = new google.maps.places.Autocomplete(input2, options)
+
+
+$document.ready(function() {
+    $("#journey_start_button").click(function() {
+        alert("")
+    });
+});
+
+
+document.getElementById("#go-btn").style.visibility = "hidden"
