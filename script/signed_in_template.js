@@ -2,23 +2,22 @@ $(document).ready(function () {
     // Global Presets
     $("#activepanel").hide();
 
-    /* @ Class Variables
-        default_coordinates: User's default location
-        waypoints: List of user's pittstop locations
-        origin: The journey's origin address
-        destination: The journey's destination address
+    /*
+    The purpose of this class is to organize the neccessary data
+    required to generate directions for Directions API.
     */
-    class Map_Service {
+    class Journey {
         constructor(default_coordinates) {
-            this.default_coordinates = default_coordinates;
-            this.waypnts = [];
-            this.origin = "";
-            this.destination = "";
+            this.default_coordinates = default_coordinates; // User's Default Locations
+            this.waypnts = [];                              // List of user's pittstop locations
+            this.origin = "";                               // Journey's origin address
+            this.destination = "";                          // Journey's destination address
         }
     }
 
-    let ms = new Map_Service({ lat: 42.3601, lng: -71.0589 });
+    let journey = new Journey({ lat: 42.3601, lng: -71.0589 });
 
+    // Cleans all the input fields in the Journey Hub Container
     function cleanText() {
         $("#start_addr").val("");
         $("#end_addr").val("");
@@ -34,7 +33,7 @@ $(document).ready(function () {
     // Initializes Google Map API Object
     const map = new google.maps.Map($("#account_map")[0], {
         zoom: 9,
-        center: ms.default_coordinates,
+        center: journey.default_coordinates,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
@@ -46,52 +45,49 @@ $(document).ready(function () {
     // Binds Direction Object to Map Object
     directionsRenderer.setMap(map);
 
-    // Handles setting up directions for the map
-    function calcRoute() {
-        ms.origin = $("#start_addr").val();
-        ms.destination = $("#end_addr").val();
-
-        var request = {
-            origin: ms.origin,
-            destination: ms.destination,
-            waypoints: ms.waypnts,
-            optimizeWaypoints: true,
-            travelMode: google.maps.TravelMode.DRIVING,
-            unitSystem: google.maps.UnitSystem.IMPERIAL
-        };
-
-        directionsService.route(request, function (result, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-                directionsRenderer.setDirections(result);
-            } else {
-                directionsRenderer.setDirections({ routes: [] });
-                map.setCenter(ms.default_coordinates);
-            }
-        });
+    // Reference: https://developers.google.com/maps/documentation/javascript/examples/directions-waypoints
+    // @param: update -> indicates if journey's origin/destination need to be updated
+    function routeService(update = false) {
+        if (update) {
+            journey.origin = $("#start_addr").val();
+            journey.destination = $("#end_addr").val();
+        }
+        const waypoints = journey.waypnts;
+        directionsService
+            .route({
+                origin: journey.origin,
+                destination: journey.destination,
+                waypoints: waypoints,
+                optimizeWaypoints: true,
+                travelMode: google.maps.TravelMode.DRIVING,
+            })
+            .then((response) => {
+                directionsRenderer.setDirections(response);
+            });
     }
 
     // Handles "Start Journey" button actions
     $("#gobtn").click(function () {
         $("#activepanel").show();
         $("#startpanel").hide();
-        calcRoute();
+        routeService(true);
     });
     // Handles "End Journey" button actions
     $("#endbtn").click(function () {
         directionsRenderer.setDirections({ routes: [] });
-        map.setCenter(ms.default_coordinates);
+        map.setCenter(journey.default_coordinates);
         $("#activepanel").hide();
         $("#startpanel").show();
         $(".plbl").remove();
-        ms.waypnts = [];
+        journey.waypnts = [];
         cleanText();
     });
     // Handles "Add Stop" button actions
     $("#addbtn").click(function () {
-        if ($("#add_addr").val() != "") {
-            ms.waypnts.push({ location: $("#add_addr").val(), stopover: true });
-            calcRoute();
-            var waypntTab = $("<div class='p-3 bg-secondary text-white m-1 plbl'></div").text(ms.waypnts.at(-1).location);
+        if ($("#add_addr").val() != "" && journey.waypnts.indexOf({ location: $("#add_addr").val(), stopover: true, }) == -1) {
+            journey.waypnts.push({ location: $("#add_addr").val(), stopover: true, });
+            routeService();
+            var waypntTab = $("<div class='p-3 bg-secondary text-white m-1 plbl' id='" + journey.waypnts.at(-1).location + "'></div").text(journey.waypnts.at(-1).location);
             $("#waypntlistroot").append(waypntTab);
         }
         cleanText();
