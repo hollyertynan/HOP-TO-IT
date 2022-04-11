@@ -1,19 +1,3 @@
-// document.querySelector("#notifications").addEventListener("click",(e)=>{
-//     e.preventDefault
-// })
-
-// document.querySelector("#messages").addEventListener("click",(e)=>{
-//     e.preventDefault
-// })
-
-// document.querySelector("#dropdown").addEventListener("click",(e)=>{
-//     e.preventDefault
-// })
-
-// function showDropdown() {
-//     document.getElementById("#dropdown").classList.toggle("show");
-// }
-
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
@@ -93,6 +77,8 @@ exitButton.addEventListener("click", notificationsDropdown)
 const backButton = document.querySelector("#goBack")
 backButton.addEventListener("click", messageDropdown)
 
+
+
 // const logButton = document.querySelector("#logout")
 // logButton.addEventListener("click", window.location("index.html"))
 
@@ -107,17 +93,6 @@ backButton.addEventListener("click", messageDropdown)
 // }
 
 
-// var LatLng = { lat: 42.3601, lng: -71.0589 };
-// var mapOptions = {
-//     center: LatLng,
-//     zoom: 9,
-//     mapTypeId: google.maps.MapTypeId.ROADMAP
-// };
-
-// var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions)
-
-
-
 window.onclick = function(event) 
 {
   
@@ -127,11 +102,7 @@ window.onclick = function(event)
     //   console.log("beojmegs");
     //   select2.style.display = "none"
   
-    // }
-  
-    
-
-    
+    // } 
 }
 
 
@@ -200,19 +171,57 @@ messageButton.id = "friendsButton"
 document.getElementById("messagesSide").appendChild(messageButton)
 
 
-function searchBar() {
-  console.log("sea")
-  document.querySelector("#search").addEventListener('submit', search(item))            //search 
-  console.log("searchbar")
-}
+// const enter = document.querySelector("#search")
+// enter.addEventListener("keyup", function(e){
+//   e.preventDefault()
+//   // console.log(e)
+//   if(e.keyCode === 13){
+//     // document.querySelector("#searchTwo").submit();
+//     // e.preventDefault();
+//     console.log("sea")
+//     search();
+//   }
+// })
+
+// function searchBar() {
+//   console.log("sea")
+//   document.querySelector("#search").addEventListener("keyup", function(event){
+//     if(event.keyCode === 13){
+//       // search();
+//     }
+//   })            //search 
+//   console.log("searchbar")
+// }
 
 function search(item){
-  const itemData = new itemData(item)
+  const itemData = new FormData(item)
 
   fetch(`https://api.edamam.com/api/food-database/parser?app_id=195cc5f5&app_key=e8bde5dcb324d7546ca5b2e41264c101=${itemData.get('name')}`)      //search
-  .then(res => res.json())
-  .then(data => console.log(data))
+    .then(res => res.json())
+    .then(data => console.log(data))
+    console.log("search")
 }
+
+
+const enter = document.querySelector("#search")
+enter.addEventListener("keyup", function(e){
+  e.preventDefault()
+  // console.log(e)
+  if(e.keyCode === 13){
+    // document.querySelector("#searchTwo").submit();
+    e.preventDefault();
+    console.log("sea")
+    console.log(enter.value); 
+    var newItem = document.createElement("p")
+    newItem.setAttribute("type", "checkbox");
+    newItem.innerHTML = enter.value                                     //creates list of items
+    document.querySelector("#otherJourneys").appendChild(newItem);
+    search();
+  }
+})
+
+
+// =${itemData.get('name')}
 
 
 
