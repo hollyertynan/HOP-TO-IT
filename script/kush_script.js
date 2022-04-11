@@ -101,7 +101,7 @@ exitButton.addEventListener("click", notificationsDropdown)
 const backButton = document.querySelector("#goBack")
 backButton.addEventListener("click", messageDropdown)
 
-Setting-up-sing-out-function-and-directions-besides-map
+// Setting-up-sing-out-function-and-directions-besides-map
 // const logButton = document.querySelector("#logout")
 // logButton.addEventListener("click", window.location("index.html"))
 
@@ -130,10 +130,16 @@ function signOut() {
 // logButton.addEventListener("click", signOut())
 
 // function signOut() {
-//   var auth2 = gapi.auth2.getAuthInstance();
-//   auth2.signOut().then(function () {
-//     console.log('User signed out.');
-//   });
+//   // var auth2 = gapi.auth2.getAuthInstance();
+//   // auth2.signOut().then(function () {
+//   //   console.log('User signed out.');
+//   // });
+
+//   // window.onLoadCallback = function(){
+//   //   gapi.auth2.init({
+//   //       client_id: 'You_client_Id_HERE.apps.googleusercontent.com'
+//   //     });
+//   //   }
 // }
 
 
@@ -214,7 +220,7 @@ messageButton.innerHTML = "Friend";
 messageButton.id = "friendsButton"
 document.getElementById("messagesSide").appendChild(messageButton)
 
-Setting-up-sing-out-function-and-directions-besides-map
+// Setting-up-sing-out-function-and-directions-besides-map
 // const spaceInside = document.createElement("div")
 // spaceInside.id = "Insidespace";
 // document.getElementById("friendsButton").prepend(spaceInside)       //create space between profile pic and name
@@ -237,7 +243,7 @@ document.getElementById("friendsButton").append(exitFriend)
 // })
 
 const mapInfo = document.createElement("p")
-mapInfo.innerHTML = "Some Info"
+mapInfo.innerHTML = "Some Info"                             //quick directions info
 mapInfo.id = "simpleInfo"
 document.getElementById("aboveMap").appendChild(mapInfo)
 
@@ -269,7 +275,7 @@ function search(item){
   fetch(`https://api.edamam.com/api/food-database/parser?app_id=195cc5f5&app_key=e8bde5dcb324d7546ca5b2e41264c101=${itemData.get('name')}`)      //search
     .then(res => res.json())
     .then(data => console.log(data))
-    console.log("search")
+    console.log(enter.value)
 }
 
 
@@ -280,34 +286,33 @@ enter.addEventListener("keyup", function(e){
   if(e.keyCode === 13){
     // document.querySelector("#searchTwo").submit();
     e.preventDefault();
-    console.log("sea")
-    console.log(enter.value); 
-    var newItem = document.createElement("p")
-    newItem.setAttribute("type", "checkbox");
-    newItem.innerHTML = enter.value                                     //creates list of items
-    document.querySelector("#otherJourneys").appendChild(newItem);
-    search();
+    // console.log("sea")
+    console.log(enter.value);
+
+    if (enter.value.length == 0){
+      return
+    }
+
+    else{
+
+      var check = document.createElement("input");
+      check.type = 'checkbox';
+      check.id = "checkList"
+      // newItem.prepend(check);
+
+      var newItem = document.createElement("p")
+      newItem.setAttribute("type", "checkbox");
+      newItem.id = "itemList"
+      newItem.innerHTML = enter.value                                     //creates list of items
+      document.querySelector("#directionsBox").appendChild(newItem);
+      newItem.prepend(check);
+
+
+      search();
+
+    }
   }
 })
 
 
 // =${itemData.get('name')}
-
-
-
-// const itemData = new itemData(item)
-// fetch(`https://api.edamam.com/api/food-database/parser?app_id=195cc5f5&app_key=e8bde5dcb324d7546ca5b2e41264c101`)
-//   .then(res => {
-//     if (res.ok){
-//       console.log("Success")
-//     }
-
-//     else{
-//       console.log('Not Success')
-//     }
-
-//     // return res.json()
-//   })
-
-//   .then(data => console.log(data))
-//   .catch(error => console.log("Error"))

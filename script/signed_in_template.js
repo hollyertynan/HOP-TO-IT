@@ -93,3 +93,20 @@ $(document).ready(function () {
         cleanText();
     });
 });
+
+// const logButton = document.querySelector("#logout")      //add #logout ID in the html
+// logButton.addEventListener("click", signOut())
+
+// function signOut() {
+//     var auth2 = gapi.auth2.getAuthInstance();
+//     auth2.signOut().then(function () {
+//       console.log('User signed out.');
+//     });
+// }
+
+
+// window.onLoadCallback = function(){
+//     gapi.auth2.init({
+//         client_id: 'You_client_Id_HERE.apps.googleusercontent.com'
+//       });
+//     }
