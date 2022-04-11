@@ -51,8 +51,19 @@ Credit:
     margin-left: -8px; */
     background-color: rgb(73, 190, 183);
     color: rgb(73, 190, 183);
-    /* height: 4px; */
+    height: 4em;
     width: 100%;
+}
+
+.card-title{
+    z-index: 1;
+    color: black;
+}
+
+#kush_yourName{
+    color: black;
+    z-index: 1;
+
 }
 
 .text-end{
@@ -410,14 +421,7 @@ h3{
     /* display: inline-block; */
 }
 
-#map{
-    height: 80%;
-    width: 70%;
-    text-align: center;
-    font-size: 50px;
-    /* background-color: black; */
-    /* align-content: center; */
-}
+
 
 #inviteBox{
     display: flex;
@@ -445,12 +449,12 @@ h3{
 
 #topSpace{
     /* height: 90px; */
-    height: 5rem;
+    height: 3rem;
     /* height: 20%; */
 }
 
 #space{
-    height: 7%;
+    height: 3%;
     /* background-color: aqua; */
     border-bottom: 1px solid rgba(0, 0, 0, 0.55);
 
@@ -471,8 +475,10 @@ h3{
   
 #quickInfo{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    height: 5%;
+    /* background-color: yellow; */
 }
 
 #spaceJourney{
@@ -480,19 +486,65 @@ h3{
 }
 
 #otherJourneys{
-    /* display: inline-block; */
     text-align: center;
-    /* font-weight: bold; */
     font-size: 1.2rem;
     /* background-color: red; */
+}
 
+#aboveMap{
+    background-color: green;
+    /* height: 50px; */
+}
+
+#simpleInfo{
+    font-size: 0.4em;
+    /* background-color: red; */
+}
+
+#mapHolder{
+    margin: auto;
+    /* display: block; */
+    /* text-align: center; */
+    /* align-content: center;
+    text-align: center; */
+    /* align-items: center; */
+    display: flex;
+    background-color: aqua;
+    width: 90%;
+}
+
+#map{
+    margin: auto;
+
+    /* text-align: center; */
+    height: 80%;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    background-color: black;
+    /* align-content: center; */
 }
 
 #example{
-    /* height: 300px;
-    width: 500px; */
-    height: 85%;
-    width: 78%;
+    margin: auto;
+    height: 67%;
+    width: 58%;
+    /* float:inline-end; */
+}
+
+#directionsBox{
+    /* margin: auto; */
+
+    background-color: blue !important;
+    /* width: 25%; */
+    width: 55%;
+    /* height: 67%; */
+    z-index: 1;
+
+}
+
+#test{
+    color: white;
 }
 
 #messagesSide{
@@ -512,7 +564,26 @@ h3{
     box-shadow: 0px 3px 0px 0px #888888;
     font-size: 1.2rem;
     font-weight: bold;
+    z-index: -1;
     
+}
+
+/* #Insidespace{
+    
+    color: blue;
+    width: 5%;
+    z-index: 1;
+} */
+
+#picFriend{
+    height: 2em !important;
+    width: 2em !important;
+    /* padding-right: 20%; */
+}
+
+#exitPic{
+    height: 2em;
+    width: 2em;
 }
 
 .show {
