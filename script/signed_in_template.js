@@ -15,7 +15,7 @@ $(document).ready(function () {
         }
     }
 
-    let journey = new Journey({ lat: 42.3601, lng: -71.0589 });
+    var journey = new Journey({ lat: 42.3601, lng: -71.0589 });
 
     // Cleans all the input fields in the Journey Hub Container
     function cleanText() {
@@ -78,7 +78,7 @@ $(document).ready(function () {
         map.setCenter(journey.default_coordinates);
         $("#activepanel").hide();
         $("#startpanel").show();
-        $(".plbl").remove();
+        $(".pitt_list").remove();
         journey.waypnts = [];
         cleanText();
     });
@@ -87,7 +87,27 @@ $(document).ready(function () {
         if ($("#add_addr").val() != "" && journey.waypnts.indexOf({ location: $("#add_addr").val(), stopover: true, }) == -1) {
             journey.waypnts.push({ location: $("#add_addr").val(), stopover: true, });
             routeService();
-            var waypntTab = $("<div class='p-3 bg-secondary text-white m-1 plbl' id='" + journey.waypnts.at(-1).location + "'></div").text(journey.waypnts.at(-1).location);
+            //var waypntTab = $("<div class='p-3 bg-secondary text-white m-1 plbl' id='" + journey.waypnts.at(-1).location + "'></div").text(journey.waypnts.at(-1).location);            
+            let waypntTab = `
+            <div class="pitt_list">
+                <p>
+                    <a class="btn btn-primary w-100 p-3" data-toggle="collapse" href="#tab`+journey.waypnts.length+`" role="button" aria-expanded="false" aria-controls="tab`+journey.waypnts.length+`">
+                        `+journey.waypnts.at(-1).location+`
+                    </a>
+                </p>
+                <div class="collapse" id="tab`+journey.waypnts.length+`">
+                    <div class="card card-body">
+                        <h5 class="card-title">Item List</h5>
+                        <form>
+                            <div>
+                                <input id="item_add" class="form-control" type="text" placeholder="Item Name">
+                            </div>
+                            <button type="button" class="btn btn-success btn-lg btn-block w-100 mt-4" id="additmbtn">Add Item</button>
+                        </form>
+                    </div>
+              </div>
+            </div>  
+            `
             $("#waypntlistroot").append(waypntTab);
         }
         cleanText();
