@@ -5,6 +5,8 @@ function onSignIn(googleUser) {
 
     var saveProfileImage = profile.getImageUrl();
     var saveProfileName = profile.getName();
+
+    window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/raj_signed_in_template");
 }
 
 //extra push 
