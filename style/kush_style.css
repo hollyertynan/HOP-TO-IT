@@ -600,6 +600,37 @@ h3{
     width: 2em;
 }
 
+#addfriend{
+    background-color: aqua;
+}
+
+#add{
+    /* background-color: black; */
+    text-align: center;
+}
+
+#acceptYes{
+    margin: auto;
+    padding: 1rem;
+    box-shadow: 0px 3px 0px 0px #888888;
+
+}
+
+#acceptYes:hover{
+    background-color: aliceblue;
+}
+
+#acceptNo{
+    margin-left: 10%;
+    padding: 1rem;
+    box-shadow: 0px 3px 0px 0px #888888;
+}
+
+#acceptNo:hover{
+    background-color: aliceblue;
+
+}
+
 .show {
     display: block !important;
 } 
