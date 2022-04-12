@@ -101,59 +101,48 @@ exitButton.addEventListener("click", notificationsDropdown)
 const backButton = document.querySelector("#goBack")
 backButton.addEventListener("click", messageDropdown)
 
-Setting-up-sing-out-function-and-directions-besides-map
+// Setting-up-sing-out-function-and-directions-besides-map
 // const logButton = document.querySelector("#logout")
 // logButton.addEventListener("click", window.location("index.html"))
 
 // const logButton = document.querySelector("#logout")
 // logButton.addEventListener("click", signOut())
 
-function signOut() {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    console.log('User signed out.');
-  });
-}
 
-
-// function onLoad() {
-//   gapi.load('auth2', function() {
-//     gapi.auth2.init();
-//   });
-// }
 
 
 // const logButton = document.querySelector("#logout")
 // logButton.addEventListener("click", window.location("index.html"))
 
-// const logButton = document.querySelector("#logout")
-// logButton.addEventListener("click", signOut())
+const logButton = document.querySelector("#logout")
 
-// function signOut() {
+// function logOut() {
+//   console.log(gapi)
+//   console.log(gapi.auth2)
+//   console.log(gapi.auth2.getAuthInstance)
 //   var auth2 = gapi.auth2.getAuthInstance();
 //   auth2.signOut().then(function () {
 //     console.log('User signed out.');
 //   });
+
+//   // GoogleAuth.signOut()
+
+  
+
+//   // window.onLoadCallback = function(){
+//   //   gapi.auth2.init({
+//   //       client_id: 'You_client_Id_HERE.apps.googleusercontent.com'
+//   //     });
+//   //   }
 // }
 
+// // function onLoad() {
+// //   gapi.load('auth2', function() {
+// //     gapi.auth2.init();
+// //   });
+// // }
 
-window.onclick = function(event) 
-{
-  
-    // const select2 = document.querySelector("#notificationInfo");
-    // if(select2.style.display === "block")
-    // {
-    //   console.log("beojmegs");
-    //   select2.style.display = "none"
-  
-    // } 
-}
-
-
-// getElementById("send").onclick = function(event){
-
-// }
-
+// logButton.addEventListener("click", logOut())
 
 const friendOne = document.createElement("p");
 friendOne.innerHTML = "Friend 1";
@@ -214,7 +203,7 @@ messageButton.innerHTML = "Friend";
 messageButton.id = "friendsButton"
 document.getElementById("messagesSide").appendChild(messageButton)
 
-Setting-up-sing-out-function-and-directions-besides-map
+// Setting-up-sing-out-function-and-directions-besides-map
 // const spaceInside = document.createElement("div")
 // spaceInside.id = "Insidespace";
 // document.getElementById("friendsButton").prepend(spaceInside)       //create space between profile pic and name
@@ -237,7 +226,7 @@ document.getElementById("friendsButton").append(exitFriend)
 // })
 
 const mapInfo = document.createElement("p")
-mapInfo.innerHTML = "Some Info"
+mapInfo.innerHTML = "Some Info"                             //quick directions info
 mapInfo.id = "simpleInfo"
 document.getElementById("aboveMap").appendChild(mapInfo)
 
@@ -262,52 +251,56 @@ document.getElementById("aboveMap").appendChild(mapInfo)
 //   })            //search 
 //   console.log("searchbar")
 // }
-
 function search(item){
   const itemData = new FormData(item)
 
-  fetch(`https://api.edamam.com/api/food-database/parser?app_id=195cc5f5&app_key=e8bde5dcb324d7546ca5b2e41264c101=${itemData.get('name')}`)      //search
+  const appId = "195cc5f5"
+  const appKey = "56edf0999dc465da064a4d4d0aa4fa42"
+  const url = `https://api.edamam.com/api/food-database/parser?app_id=${appId}&app_key=${appKey}&ingr=${itemData.get('name')}`
+  // const url = `https://api.edamam.com/api/food-database/parser?app_id=ca747d07&app_key=722fabaee32b8118f7b1cb2e32b137cf&ingr=${itemData.get('name')}`
+
+  fetch(url)      //search
     .then(res => res.json())
-    .then(data => console.log(data))
-    console.log("search")
+    .then(data => console.log("data", data)).catch(err=> console.log(err))
+    // console.log(enter.value)
 }
 
 
 const enter = document.querySelector("#search")
-enter.addEventListener("keyup", function(e){
+enter.addEventListener("keyup", function(e){              //creates a list 
   e.preventDefault()
   // console.log(e)
   if(e.keyCode === 13){
+    var letters = /^[A-Za-z]+$/;
+
     // document.querySelector("#searchTwo").submit();
     e.preventDefault();
-    console.log("sea")
-    console.log(enter.value); 
-    var newItem = document.createElement("p")
-    newItem.setAttribute("type", "checkbox");
-    newItem.innerHTML = enter.value                                     //creates list of items
-    document.querySelector("#otherJourneys").appendChild(newItem);
-    search();
+    // console.log("sea")
+    console.log(enter.value);
+
+    if (enter.value.length == 0){
+      return
+    }
+
+
+    if(enter.value.match(letters)){
+
+      var check = document.createElement("input");
+      // const item = enter.value
+      check.type = 'checkbox';
+      check.id = "checkList"
+      // newItem.prepend(check);
+
+      var newItem = document.createElement("p")
+      newItem.setAttribute("type", "checkbox");
+      newItem.id = "itemList"
+      newItem.innerHTML = enter.value                                     //creates list of items
+      document.querySelector("#directionsBox").appendChild(newItem);
+      newItem.prepend(check);
+
+
+      search();
+
+    }
   }
 })
-
-
-// =${itemData.get('name')}
-
-
-
-// const itemData = new itemData(item)
-// fetch(`https://api.edamam.com/api/food-database/parser?app_id=195cc5f5&app_key=e8bde5dcb324d7546ca5b2e41264c101`)
-//   .then(res => {
-//     if (res.ok){
-//       console.log("Success")
-//     }
-
-//     else{
-//       console.log('Not Success')
-//     }
-
-//     // return res.json()
-//   })
-
-//   .then(data => console.log(data))
-//   .catch(error => console.log("Error"))

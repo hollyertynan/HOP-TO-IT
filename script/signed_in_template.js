@@ -116,6 +116,7 @@ $(document).ready(function () {
         }
         cleanText();
     });
+
     $(document).on("click", ".additm", function(e) {
         $('body').on("change",'input[name="'+e.target.id+'_input"', () => {});
         $('body').on("change", 'ul[name="'+e.target.id+'_list"', () => {});
