@@ -407,6 +407,7 @@ h3{
 }
 
 .box2{
+    /* overflow-y: scroll; */
     height: 80%;
     /* border-bottom: 1px solid rgba(0, 0, 0, 0.55); */
     align-content: center;
@@ -492,7 +493,7 @@ h3{
 }
 
 #aboveMap{
-    background-color: green;
+    /* background-color: green; */
     /* height: 50px; */
 }
 
@@ -502,6 +503,7 @@ h3{
 }
 
 #mapHolder{
+    /* overflow-y: scroll; */
     margin: auto;
     /* display: block; */
     /* text-align: center; */
@@ -509,19 +511,20 @@ h3{
     text-align: center; */
     /* align-items: center; */
     display: flex;
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 90%;
 }
 
 #map{
     margin: auto;
+    /* overflow-y: scroll; */
 
     /* text-align: center; */
     height: 80%;
     width: 100%;
     text-align: center;
     font-size: 50px;
-    background-color: black;
+    /* background-color: black; */
     /* align-content: center; */
 }
 
@@ -533,14 +536,25 @@ h3{
 }
 
 #directionsBox{
+    overflow: auto;
     /* margin: auto; */
-
-    background-color: blue !important;
+    /* background-color: blue !important; */
     /* width: 25%; */
     width: 55%;
-    /* height: 67%; */
     z-index: 1;
+    font-size: 30%;
 
+}
+
+#itemList{
+    margin: auto;
+    /* background-color: red; */
+    /* height: 10%; */
+}
+
+#checkList{
+    margin-right:auto;
+    margin-left: auto;
 }
 
 #test{

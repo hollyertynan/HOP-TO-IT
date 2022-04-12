@@ -113,3 +113,60 @@ $(document).ready(function () {
         cleanText();
     });
 });
+
+// const logButton = document.querySelector("#logout")      //add #logout ID in the html
+// logButton.addEventListener("click", signOut())
+
+// function signOut() {
+//     var auth2 = gapi.auth2.getAuthInstance();
+//     auth2.signOut().then(function () {
+//       console.log('User signed out.');
+//     });
+// }
+
+
+// window.onLoadCallback = function(){
+//     gapi.auth2.init({
+//         client_id: 'You_client_Id_HERE.apps.googleusercontent.com'
+//       });
+//     }
+
+
+// const enter = document.querySelector("#search")
+// enter.addEventListener("keyup", function(e){              //creates a list 
+//   e.preventDefault()
+//   // console.log(e)
+//   if(e.keyCode === 13){
+//     var letters = /^[A-Za-z]+$/;
+
+//     // document.querySelector("#searchTwo").submit();
+//     e.preventDefault();
+//     // console.log("sea")
+//     console.log(enter.value);
+
+//     if (enter.value.length == 0){
+//       return
+//     }
+
+
+//     if(enter.value.match(letters)){
+
+//       var check = document.createElement("input");
+//       // const item = enter.value
+//       check.type = 'checkbox';
+//       check.id = "checkList"
+//       // newItem.prepend(check);
+
+//       var newItem = document.createElement("p")
+//       newItem.setAttribute("type", "checkbox");
+//       newItem.id = "itemList"
+//       newItem.innerHTML = enter.value                                     //creates list of items
+//       document.querySelector("#directionsBox").appendChild(newItem);
+//       newItem.prepend(check);
+
+
+//       search();
+
+//     }
+//   }
+// })
