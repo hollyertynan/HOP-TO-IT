@@ -71,6 +71,7 @@ $(document).ready(function () {
         $("#activepanel").show();
         $("#startpanel").hide();
         routeService(true);
+        $("#trip_label").html(journey.origin + " to " + journey.destination);
     });
     // Handles "End Journey" button actions
     $("#endbtn").click(function () {
@@ -81,6 +82,7 @@ $(document).ready(function () {
         $(".pitt_list").remove();
         journey.waypnts = [];
         cleanText();
+        $("#trip_label").html("");
     });
     // Handles "Add Stop" button actions
     $("#addbtn").click(function () {
@@ -98,11 +100,13 @@ $(document).ready(function () {
                 <div class="collapse" id="tab`+journey.waypnts.length+`">
                     <div class="card card-body">
                         <h5 class="card-title">Item List</h5>
+                        <ul id="item`+journey.waypnts.length+`_list">
+                        </ul>
                         <form>
                             <div>
-                                <input id="item_add" class="form-control" type="text" placeholder="Item Name">
+                                <input id="item`+journey.waypnts.length+`_input" class="form-control" type="text" placeholder="Item Name">
                             </div>
-                            <button type="button" class="btn btn-success btn-lg btn-block w-100 mt-4" id="additmbtn">Add Item</button>
+                            <button type="button" class="btn btn-success btn-lg btn-block w-100 mt-4 additm" id="item`+journey.waypnts.length+`">Add Item</button>
                         </form>
                     </div>
               </div>
@@ -111,5 +115,13 @@ $(document).ready(function () {
             $("#waypntlistroot").append(waypntTab);
         }
         cleanText();
+    });
+    $(document).on("click", ".additm", function(e) {
+        $('body').on("change",'input[name="'+e.target.id+'_input"', () => {});
+        $('body').on("change", 'ul[name="'+e.target.id+'_list"', () => {});
+
+        let list_element = "<li>"+$("#"+e.target.id+"_input").val() + "</li>";
+        console.log(list_element)
+        $("#"+e.target.id+"_list").append(list_element);
     });
 });
