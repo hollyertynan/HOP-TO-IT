@@ -28,5 +28,5 @@ function signOut() {
       console.log('User signed out.');
     });
 
-    location.reload();
+    window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/");
 }
