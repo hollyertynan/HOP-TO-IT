@@ -83,6 +83,42 @@ function removeMessage(){
   }
 }
 
+
+/********************************************************************************************** */
+/********************************************************************************************** */
+/********************************************************************************************** */
+
+function removePopup(){
+  console.log('BEFORE')
+  const select = document.querySelector("#add")
+  console.log('AFTER')
+
+  if(select.style.display === "block")
+  {
+    console.log('INSIDE')
+    
+    select.style.display === "none";
+  }
+}
+
+function addNotification(){
+  const notiAdd = document.querySelector("#notifications")
+  notiAdd.innerHTML = "Jacquie Moloney has been added as friend"
+}
+
+const removeYes = document.querySelector("#acceptYes")
+removeYes.addEventListener("click", removePopup)
+removeYes.addEventListener("click", addNotification)
+
+
+const removeNo = document.querySelector("#acceptNo")
+removeNo.addEventListener("click", removePopup)
+
+/********************************************************************************************** */
+/********************************************************************************************** */
+/********************************************************************************************** */
+
+
 const div_noti = document.querySelector("#notifications")
 div_noti.addEventListener("click", notificationsDropdown)
 
@@ -143,6 +179,8 @@ const logButton = document.querySelector("#logout")
 // // }
 
 // logButton.addEventListener("click", logOut())
+
+
 
 const friendOne = document.createElement("p");
 friendOne.innerHTML = "Friend 1";
@@ -270,13 +308,14 @@ const enter = document.querySelector("#search")
 enter.addEventListener("keyup", function(e){              //creates a list 
   e.preventDefault()
   // console.log(e)
+  
   if(e.keyCode === 13){
     var letters = /^[A-Za-z]+$/;
 
     // document.querySelector("#searchTwo").submit();
     e.preventDefault();
     // console.log("sea")
-    console.log(enter.value);
+    // console.log(enter.value);
 
     if (enter.value.length == 0){
       return
@@ -285,21 +324,48 @@ enter.addEventListener("keyup", function(e){              //creates a list
 
     if(enter.value.match(letters)){
 
-      var check = document.createElement("input");
-      // const item = enter.value
-      check.type = 'checkbox';
-      check.id = "checkList"
+      // var check = document.createElement("input");
+      // // const item = enter.value
+      // check.type = 'checkbox';
+      // check.id = "checkList"
+      // // newItem.prepend(check);
+
+      // var newItem = document.createElement("p")
+      // newItem.setAttribute("type", "checkbox");
+      // newItem.id = "itemList"
+      // newItem.innerHTML = enter.value                                     //creates list of items
+      // document.querySelector("#directionsBox").appendChild(newItem);
       // newItem.prepend(check);
 
-      var newItem = document.createElement("p")
-      newItem.setAttribute("type", "checkbox");
-      newItem.id = "itemList"
-      newItem.innerHTML = enter.value                                     //creates list of items
-      document.querySelector("#directionsBox").appendChild(newItem);
-      newItem.prepend(check);
+      // search();
 
+    }
+    
 
-      search();
+/********************************************************************************************** */
+
+    if(enter.value == "Jacquie Moloney"){
+      console.log(enter.value)
+      var add = document.createElement("div")
+      var addfriend = document.createElement("p")
+      addfriend.innerHTML = "Would you like to add Jacquie Moloney as a friend?"
+      // add.innerHTML = "Jacquie Moloney"
+      add.id = "add"
+
+      var yes = document.createElement("button")
+      yes.id = "acceptYes"
+      yes.innerHTML = "Yes"
+      var no = document.createElement("button")
+      no.id = "acceptNo"
+      no.innerHTML = "No"
+
+      document.querySelector(".box3").appendChild(add)
+      document.querySelector("#add").appendChild(addfriend)
+      document.querySelector("#add").appendChild(yes)
+      document.querySelector("#add").appendChild(no)
+
+/********************************************************************************************** */
+
 
     }
   }
