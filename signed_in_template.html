@@ -31,6 +31,25 @@ Credit:
     <link rel="stylesheet" href="style/ssuna_style.css">
 
     <link rel="icon" href="assets/icon.ico">
+
+    <script>
+        import { getAuth } from "firebase/auth";
+
+        const auth = getAuth();
+        const user = auth.currentUser;
+        if (user !== null) {
+            // The user object has basic properties such as display name, email, etc.
+            const displayName = user.displayName;
+            const email = user.email;
+            const photoURL = user.photoURL;
+            const emailVerified = user.emailVerified;
+
+            // The user's ID, unique to the Firebase project. Do NOT use
+            // this value to authenticate with your backend server, if
+            // you have one. Use User.getToken() instead.
+            const uid = user.uid;
+        }
+    </script>
 </head>
 
 <body>
@@ -51,7 +70,7 @@ Credit:
                             <div id="add_name"></div>
                         </li>
                         <li class="nav-item my-auto px-1">
-                            <div class="g-signin2" data-onsuccess="signedInPage" id="remove_signin"></div>
+                            <div data-onsuccess="getUserInformation" id="remove_signin"></div>
                         </li>
                     </ul>
 
@@ -109,7 +128,7 @@ Credit:
                                     <li>
                                         <div class="card" style="width: 18rem;">
                                             <h5 class="card-title">Are you sure?</h5>
-                                            <button class="btn btn-primary" onclick="signOut()">Logout</button>
+                                            <button class="btn btn-primary" onclick="newSignOut()">Logout</button>
                                         </div>
                                     </li>
                                 </ul>
