@@ -33,6 +33,7 @@ function signOut() {
 
 function newSignOut() {
   firebase.auth().signOut();
+  window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/");
 }
 
 function getUserInformation() {
