@@ -30,3 +30,12 @@ function signOut() {
 
     window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/");
 }
+
+function newSignOut() {
+  firebase.auth().signOut();
+}
+
+function getUserInformation() {
+  document.getElementById("remove_signin").innerHTML = "<h5 class=\"my-auto mx-auto\">" + displayName + "</h5>";
+  document.getElementById("add_name").innerHTML = "<img class=\"img-fluid ms-4 mx-auto rounded-circle\" style=\"max-width: 50px\" src='" + photoURL + "' alt='Profile Picture'>";
+}
