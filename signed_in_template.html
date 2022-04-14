@@ -72,6 +72,25 @@ Credit:
                     // Return type determines whether we continue the redirect automatically
                     // or whether we leave that to developer to handle.
                     $('#staticBackdrop').modal('hide');
+
+                    const auth = getAuth();
+                    const user = auth.currentUser;
+                    if (user !== null) {
+                        // The user object has basic properties such as display name, email, etc.
+                        const displayName = user.displayName;
+                        const email = user.email;
+                        const photoURL = user.photoURL;
+                        const emailVerified = user.emailVerified;
+
+                        // The user's ID, unique to the Firebase project. Do NOT use
+                        // this value to authenticate with your backend server, if
+                        // you have one. Use User.getToken() instead.
+                        const uid = user.uid;
+                    }
+                    
+                    document.getElementById("remove_signin").innerHTML = "<h5 class=\"my-auto mx-auto\">" + displayName + "</h5>";
+                    document.getElementById("add_name").innerHTML = "<img class=\"img-fluid ms-4 mx-auto rounded-circle\" style=\"max-width: 50px\" src='" + photoURL + "' alt='Profile Picture'>";
+
                     return false;
                 },
                 uiShown: function() {
