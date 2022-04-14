@@ -36,15 +36,10 @@ Credit:
 
     <link rel="icon" href="assets/icon.ico">
     <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+
     <script type="module">
-        // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
         const firebaseConfig = {
           apiKey: "AIzaSyBIbiNnmnd0uB5zkJa0LNyKvjryaaCso4s",
           authDomain: "hop-to-it-d4b29.firebaseapp.com",
@@ -54,35 +49,19 @@ Credit:
           appId: "1:901911434529:web:78408095d20d62e904da60",
           measurementId: "G-MDGLQVSZ2W"
         };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
 
         // Initialize the FirebaseUI Widget using Firebase.
         firebase.initializeApp(firebaseConfig);
-    </script>
 
-    <script type="module">
-        import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-
-        const auth = getAuth();
-        const user = auth.currentUser;
-        if (user !== null) {
-            // The user object has basic properties such as display name, email, etc.
-            const displayName = user.displayName;
-            const email = user.email;
-            const photoURL = user.photoURL;
-            const emailVerified = user.emailVerified;
-
-            // The user's ID, unique to the Firebase project. Do NOT use
-            // this value to authenticate with your backend server, if
-            // you have one. Use User.getToken() instead.
-            const uid = user.uid;
+        var user = firebase.auth().currentUser;
+        if (user) {
+            console.log(user)
+        } else {
+            console.log("No user. Error.")
         }
 
-        console.log(user.displayName)
-        console.log(user.photoURL)
+        //window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/signed_in_template.html");
+
     </script>
 </head>
 
