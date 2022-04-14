@@ -82,12 +82,18 @@ Credit:
                         const photoURL = user.photoURL;
                         const emailVerified = user.emailVerified;
 
+                        console.log(displayName)
+                        console.log(photoURL)
+
                         // The user's ID, unique to the Firebase project. Do NOT use
                         // this value to authenticate with your backend server, if
                         // you have one. Use User.getToken() instead.
                         const uid = user.uid;
                     }
-                    
+
+                    console.log(displayName);
+                    console.log(photoURL);
+
                     document.getElementById("remove_signin").innerHTML = "<h5 class=\"my-auto mx-auto\">" + displayName + "</h5>";
                     document.getElementById("add_name").innerHTML = "<img class=\"img-fluid ms-4 mx-auto rounded-circle\" style=\"max-width: 50px\" src='" + photoURL + "' alt='Profile Picture'>";
 
@@ -144,7 +150,7 @@ Credit:
                             <div id="add_name"></div>
                         </li>
                         <li class="nav-item my-auto px-1">
-                            <div data-onsuccess="getUserInformation" id="remove_signin"></div>
+                            <div id="remove_signin"></div>
                         </li>
                     </ul>
 
