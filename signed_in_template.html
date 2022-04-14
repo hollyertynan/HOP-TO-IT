@@ -82,7 +82,7 @@ Credit:
 
             // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
             signInFlow: 'popup',
-            signInSuccessUrl: 'signed_in_template.html',
+            signInSuccessUrl: '',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
                 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -200,12 +200,9 @@ Credit:
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div id="firebaseui-auth-container"></div>
-                    <div id="loader">Loading...</div>
-                </div>
+                <div id="firebaseui-auth-container"></div>
+                <div id="loader">Loading...</div>
             </div>
         </div>
     </div>
