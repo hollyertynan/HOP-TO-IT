@@ -27,3 +27,16 @@ function checkForUser() {
 
     //window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/signed_in_template.html");
 }
+
+function myWaitFunction() {
+    do {
+        var user = firebase.auth().currentUser;
+        if (user) {
+            console.log(user)
+        } else {
+            console.log("No user. Error.")
+        }
+    } while(!user)
+
+    window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/signed_in_template.html");
+}
