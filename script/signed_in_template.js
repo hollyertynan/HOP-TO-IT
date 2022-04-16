@@ -38,16 +38,16 @@ $(document).ready(function () {
     });
 
     // Intializes Places API Object (Location Autocomplete Feature)
-    var autocomplete1 = new google.maps.places.Autocomplete($("#start_addr")[0]);
-    var autocomplete2 = new google.maps.places.Autocomplete($("#end_addr")[0]);
-    var autocomplete3 = new google.maps.places.Autocomplete($("#add_addr")[0]);
+    // var autocomplete1 = new google.maps.places.Autocomplete($("#start_addr")[0]);
+    // var autocomplete2 = new google.maps.places.Autocomplete($("#end_addr")[0]);
+    // var autocomplete3 = new google.maps.places.Autocomplete($("#add_addr")[0]);
 
     // Binds Direction Object to Map Object
     directionsRenderer.setMap(map);
 
     // Reference: https://developers.google.com/maps/documentation/javascript/examples/directions-waypoints
     // @param: update -> indicates if journey's origin/destination need to be updated
-    function routeService(update = false) {
+    function routeService(update = false, optimize = false) {
         if (update) {
             journey.origin = $("#start_addr").val();
             journey.destination = $("#end_addr").val();
@@ -58,7 +58,7 @@ $(document).ready(function () {
                 origin: journey.origin,
                 destination: journey.destination,
                 waypoints: waypoints,
-                optimizeWaypoints: true,
+                optimizeWaypoints: optimize,
                 travelMode: google.maps.TravelMode.DRIVING,
             })
             .then((response) => {
@@ -89,24 +89,26 @@ $(document).ready(function () {
         if ($("#add_addr").val() != "" && journey.waypnts.indexOf({ location: $("#add_addr").val(), stopover: true, }) == -1) {
             journey.waypnts.push({ location: $("#add_addr").val(), stopover: true, });
             routeService();
-            //var waypntTab = $("<div class='p-3 bg-secondary text-white m-1 plbl' id='" + journey.waypnts.at(-1).location + "'></div").text(journey.waypnts.at(-1).location);            
             let waypntTab = `
             <div class="pitt_list">
                 <p>
-                    <a class="btn btn-primary w-100 p-3" data-toggle="collapse" href="#tab`+journey.waypnts.length+`" role="button" aria-expanded="false" aria-controls="tab`+journey.waypnts.length+`">
-                        `+journey.waypnts.at(-1).location+`
+                    <a class="btn btn-primary w-100 p-3" data-toggle="collapse" href="#tab`+ journey.waypnts.length + `" role="button" aria-expanded="false" aria-controls="tab` + journey.waypnts.length + `">
+                        `+ journey.waypnts.at(-1).location + `
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                        </svg>
                     </a>
                 </p>
-                <div class="collapse" id="tab`+journey.waypnts.length+`">
+                <div class="collapse" id="tab`+ journey.waypnts.length + `">
                     <div class="card card-body">
                         <h5 class="card-title">Item List</h5>
-                        <ul id="item`+journey.waypnts.length+`_list">
+                        <ul id="item`+ journey.waypnts.length + `_list">
                         </ul>
                         <form>
                             <div>
-                                <input id="item`+journey.waypnts.length+`_input" class="form-control" type="text" placeholder="Item Name">
+                                <input id="item`+ journey.waypnts.length + `_input" class="form-control" type="text" placeholder="Item Name">
                             </div>
-                            <button type="button" class="btn btn-success btn-lg btn-block w-100 mt-4 additm" id="item`+journey.waypnts.length+`">Add Item</button>
+                            <button type="button" class="btn btn-success btn-lg btn-block w-100 mt-4 additm" id="item`+ journey.waypnts.length + `">Add Item</button>
                         </form>
                     </div>
               </div>
@@ -116,13 +118,14 @@ $(document).ready(function () {
         }
         cleanText();
     });
-
-    $(document).on("click", ".additm", function(e) {
-        $('body').on("change",'input[name="'+e.target.id+'_input"', () => {});
-        $('body').on("change", 'ul[name="'+e.target.id+'_list"', () => {});
-
-        let list_element = "<li>"+$("#"+e.target.id+"_input").val() + "</li>";
+    // Handles actions for dynamically added location tabs and their respective item lists
+    $(document).on("click", ".additm", function (e) {
+        // "Rebinds" dynamically added elements such that jquery selectors identify them
+        $('body').on("change", 'input[name="' + e.target.id + '_input"', () => { });
+        $('body').on("change", 'ul[name="' + e.target.id + '_list"', () => { });
+        // Adds list element to item list
+        let list_element = "<li>" + $("#" + e.target.id + "_input").val() + "</li>";
         console.log(list_element)
-        $("#"+e.target.id+"_list").append(list_element);
+        $("#" + e.target.id + "_list").append(list_element);
     });
 });
