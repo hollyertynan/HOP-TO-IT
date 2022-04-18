@@ -126,3 +126,71 @@ $(document).ready(function () {
         $("#"+e.target.id+"_list").append(list_element);
     });
 });
+
+
+// const enter = document.querySelector("#search")
+// enter.addEventListener("keyup", function(e){              //creates a list 
+//   e.preventDefault()
+  
+//   if(e.keyCode === 13){
+//     var letters = /^[A-Za-z]+$/;
+
+//     // document.querySelector("#searchTwo").submit();
+//     e.preventDefault();
+//     // console.log("sea")
+//     // console.log(enter.value);
+
+//     if (enter.value.length == 0){
+//       return
+//     }
+
+//     if(enter.value.match(letters)){
+
+//     }
+    
+// /********************************************************************************************** */
+
+//     if(enter.value == "Jacquie Moloney"){
+
+//       // console.log(enter.value)
+//       var add = document.createElement("div")
+//       var addfriend = document.createElement("p")
+//       addfriend.innerHTML = "Would you like to add Jacquie Moloney as a friend?"
+//       // add.innerHTML = "Jacquie Moloney"
+//       add.id = "add"
+//       add.display === "block";
+
+//       var yes = document.createElement("button")
+//       yes.id = "acceptYes"
+//       yes.innerHTML = "Yes"
+//       var no = document.createElement("button")
+//       no.id = "acceptNo"
+//       no.innerHTML = "No"
+
+//       document.querySelector(".box3").appendChild(add)
+//       document.querySelector("#add").appendChild(addfriend)
+//       document.querySelector("#add").appendChild(yes)
+//       document.querySelector("#add").appendChild(no)
+
+
+//       function removePopup(){
+//         console.log('BEFORE')
+//         const select = document.querySelector("#add")
+//         console.log('AFTER')
+//         select.remove();
+//       }
+
+//       const removeYes = document.querySelector("#acceptYes")
+//       removeYes.addEventListener("click", removePopup)
+//       removeYes.addEventListener("click", addNotification)
+
+
+//       const removeNo = document.querySelector("#acceptNo")
+//       removeNo.addEventListener("click", removePopup)
+
+// /********************************************************************************************** */
+
+
+//     }
+//   }
+// })

@@ -88,31 +88,31 @@ function removeMessage(){
 /********************************************************************************************** */
 /********************************************************************************************** */
 
-function removePopup(){
-  console.log('BEFORE')
-  const select = document.querySelector("#add")
-  console.log('AFTER')
+// function removePopup(){
+//   console.log('BEFORE')
+//   const select = document.querySelector("#add")
+//   console.log('AFTER')
 
-  if(select.style.display === "block")
-  {
-    console.log('INSIDE')
+//   if(select.style.display === "block")
+//   {
+//     console.log('INSIDE')
     
-    select.style.display === "none";
-  }
-}
+//     select.style.display === "none";
+//   }
+// }
 
 function addNotification(){
   const notiAdd = document.querySelector("#notifications")
   notiAdd.innerHTML = "Jacquie Moloney has been added as friend"
 }
 
-const removeYes = document.querySelector("#acceptYes")
-removeYes.addEventListener("click", removePopup)
-removeYes.addEventListener("click", addNotification)
+// const removeYes = document.querySelector("#acceptYes")
+// removeYes.addEventListener("click", removePopup)
+// removeYes.addEventListener("click", addNotification)
 
 
-const removeNo = document.querySelector("#acceptNo")
-removeNo.addEventListener("click", removePopup)
+// const removeNo = document.querySelector("#acceptNo")
+// removeNo.addEventListener("click", removePopup)
 
 /********************************************************************************************** */
 /********************************************************************************************** */
@@ -268,46 +268,9 @@ mapInfo.innerHTML = "Some Info"                             //quick directions i
 mapInfo.id = "simpleInfo"
 document.getElementById("aboveMap").appendChild(mapInfo)
 
-// const enter = document.querySelector("#search")
-// enter.addEventListener("keyup", function(e){
-//   e.preventDefault()
-//   // console.log(e)
-//   if(e.keyCode === 13){
-//     // document.querySelector("#searchTwo").submit();
-//     // e.preventDefault();
-//     console.log("sea")
-//     search();
-//   }
-// })
-
-// function searchBar() {
-//   console.log("sea")
-//   document.querySelector("#search").addEventListener("keyup", function(event){
-//     if(event.keyCode === 13){
-//       // search();
-//     }
-//   })            //search 
-//   console.log("searchbar")
-// }
-function search(item){
-  const itemData = new FormData(item)
-
-  const appId = "195cc5f5"
-  const appKey = "56edf0999dc465da064a4d4d0aa4fa42"
-  const url = `https://api.edamam.com/api/food-database/parser?app_id=${appId}&app_key=${appKey}&ingr=${itemData.get('name')}`
-  // const url = `https://api.edamam.com/api/food-database/parser?app_id=ca747d07&app_key=722fabaee32b8118f7b1cb2e32b137cf&ingr=${itemData.get('name')}`
-
-  fetch(url)      //search
-    .then(res => res.json())
-    .then(data => console.log("data", data)).catch(err=> console.log(err))
-    // console.log(enter.value)
-}
-
-
 const enter = document.querySelector("#search")
 enter.addEventListener("keyup", function(e){              //creates a list 
   e.preventDefault()
-  // console.log(e)
   
   if(e.keyCode === 13){
     var letters = /^[A-Za-z]+$/;
@@ -321,36 +284,21 @@ enter.addEventListener("keyup", function(e){              //creates a list
       return
     }
 
-
     if(enter.value.match(letters)){
-
-      // var check = document.createElement("input");
-      // // const item = enter.value
-      // check.type = 'checkbox';
-      // check.id = "checkList"
-      // // newItem.prepend(check);
-
-      // var newItem = document.createElement("p")
-      // newItem.setAttribute("type", "checkbox");
-      // newItem.id = "itemList"
-      // newItem.innerHTML = enter.value                                     //creates list of items
-      // document.querySelector("#directionsBox").appendChild(newItem);
-      // newItem.prepend(check);
-
-      // search();
 
     }
     
-
 /********************************************************************************************** */
 
     if(enter.value == "Jacquie Moloney"){
-      console.log(enter.value)
+
+      // console.log(enter.value)
       var add = document.createElement("div")
       var addfriend = document.createElement("p")
       addfriend.innerHTML = "Would you like to add Jacquie Moloney as a friend?"
       // add.innerHTML = "Jacquie Moloney"
       add.id = "add"
+      add.display === "block";
 
       var yes = document.createElement("button")
       yes.id = "acceptYes"
@@ -363,6 +311,22 @@ enter.addEventListener("keyup", function(e){              //creates a list
       document.querySelector("#add").appendChild(addfriend)
       document.querySelector("#add").appendChild(yes)
       document.querySelector("#add").appendChild(no)
+
+
+      function removePopup(){
+        console.log('BEFORE')
+        const select = document.querySelector("#add")
+        console.log('AFTER')
+        select.remove();
+      }
+
+      const removeYes = document.querySelector("#acceptYes")
+      removeYes.addEventListener("click", removePopup)
+      removeYes.addEventListener("click", addNotification)
+
+
+      const removeNo = document.querySelector("#acceptNo")
+      removeNo.addEventListener("click", removePopup)
 
 /********************************************************************************************** */
 
