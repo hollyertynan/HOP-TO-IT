@@ -9,6 +9,7 @@ $(document).ready(function () {
     class Journey {
         constructor(default_coordinates) {
             this.default_coordinates = default_coordinates; // User's Default Locations
+            this.user_coordinate = {};
             this.waypnts = [];                              // List of user's pittstop locations
             this.origin = "";                               // Journey's origin address
             this.destination = "";                          // Journey's destination address
@@ -36,11 +37,28 @@ $(document).ready(function () {
         center: journey.default_coordinates,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+    // Tracks the user's position
+    const successCallback = (position) => {
+        console.log(position);
+        journey.user_coordinates = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        }
+        new google.maps.Marker({
+            position: journey.user_coordinates,
+            map:map
+        });
+    }
+    const errorCallback = (error) => {
+        console.log(error);
+    }
+
+    const watchId = navigator.geolocation.watchPosition(successCallback, errorCallback);
 
     // Intializes Places API Object (Location Autocomplete Feature)
-    // var autocomplete1 = new google.maps.places.Autocomplete($("#start_addr")[0]);
-    // var autocomplete2 = new google.maps.places.Autocomplete($("#end_addr")[0]);
-    // var autocomplete3 = new google.maps.places.Autocomplete($("#add_addr")[0]);
+    //var autocomplete1 = new google.maps.places.Autocomplete($("#start_addr")[0]);
+    //var autocomplete2 = new google.maps.places.Autocomplete($("#end_addr")[0]);
+    //var autocomplete3 = new google.maps.places.Autocomplete($("#add_addr")[0]);
 
     // Binds Direction Object to Map Object
     directionsRenderer.setMap(map);
@@ -102,13 +120,16 @@ $(document).ready(function () {
                 <div class="collapse" id="tab`+ journey.waypnts.length + `">
                     <div class="card card-body">
                         <h5 class="card-title">Item List</h5>
-                        <ul id="item`+ journey.waypnts.length + `_list">
-                        </ul>
+                        <div id="item`+ journey.waypnts.length + `_list"></div>
                         <form>
                             <div>
-                                <input id="item`+ journey.waypnts.length + `_input" class="form-control" type="text" placeholder="Item Name">
+                                <input id="item`+ journey.waypnts.length + `_input" class="form-control m-1" type="text" placeholder="Item Name">
+                            </div>
+                            <div>
+                                <input id="item`+ journey.waypnts.length + `_amount" class = "form-control m-1" type="number" placeholder="Amount">
                             </div>
                             <button type="button" class="btn btn-success btn-lg btn-block w-100 mt-4 additm" id="item`+ journey.waypnts.length + `">Add Item</button>
+                            <button type="button" class="btn btn-danger btn-lg btn-block w-100 mt-4 additm" id="item`+ journey.waypnts.length + `_del">Delete Item(s)</button>
                         </form>
                     </div>
               </div>
@@ -122,14 +143,18 @@ $(document).ready(function () {
     $(document).on("click", ".additm", function (e) {
         // "Rebinds" dynamically added elements such that jquery selectors identify them
         $('body').on("change", 'input[name="' + e.target.id + '_input"', () => { });
-        $('body').on("change", 'ul[name="' + e.target.id + '_list"', () => { });
+        $('body').on("change", 'input[name="' + e.target.id + '_amount"', () => { });
+        $('body').on("change", 'div[name="' + e.target.id + '_list"', () => { });
         // Adds list element to item list
-        let list_element = "<li>" + $("#" + e.target.id + "_input").val() + "</li>";
+        let itemName = $("#" + e.target.id + "_input").val();
+        let itemAmount = $("#" + e.target.id + "_amount").val();
+        // Build div container to house item information
+        let list_element = "<div class='p-2 m-1 bg-dark text-white font-weight-bold border border-rounded'>" + itemName + ": " + itemAmount + "</div>"
+
         console.log(list_element)
         $("#" + e.target.id + "_list").append(list_element);
     });
 });
-
 
 // const enter = document.querySelector("#search")
 // enter.addEventListener("keyup", function(e){              //creates a list 
