@@ -111,7 +111,7 @@ $(document).ready(function () {
             <div class="pitt_list">
                 <p>
                     <a class="btn btn-primary w-100 p-3" data-toggle="collapse" href="#tab`+ journey.waypnts.length + `" role="button" aria-expanded="false" aria-controls="tab` + journey.waypnts.length + `">
-                        `+ journey.waypnts.at(-1).location + `
+                        `+ journey.waypnts.at(-1).location + ` 
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                         </svg>
@@ -128,8 +128,12 @@ $(document).ready(function () {
                             <div>
                                 <input id="item`+ journey.waypnts.length + `_amount" class = "form-control m-1" type="number" placeholder="Amount">
                             </div>
-                            <button type="button" class="btn btn-success btn-lg btn-block w-100 mt-4 additm" id="item`+ journey.waypnts.length + `">Add Item</button>
-                            <button type="button" class="btn btn-danger btn-lg btn-block w-100 mt-4 additm" id="item`+ journey.waypnts.length + `_del">Delete Item(s)</button>
+                            <button type="button" class="btn btn-success btn-lg btn-block w-100 mt-4 additm" id="item`+ journey.waypnts.length + `">Add Item
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket-fill" viewBox="0 0 16 16">
+                                <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-lg btn-block w-100 mt-4 rmitm" id="item`+ journey.waypnts.length + `_del">Delete Item(s)</button>
                         </form>
                     </div>
               </div>
@@ -147,12 +151,37 @@ $(document).ready(function () {
         $('body').on("change", 'div[name="' + e.target.id + '_list"', () => { });
         // Adds list element to item list
         let itemName = $("#" + e.target.id + "_input").val();
+        $("#" + e.target.id + "_input").val("");
         let itemAmount = $("#" + e.target.id + "_amount").val();
+        $("#" + e.target.id + "_amount").val(1);
+        if (itemAmount == '') {
+            itemAmount = 0;
+        }
         // Build div container to house item information
-        let list_element = "<div class='p-2 m-1 bg-dark text-white font-weight-bold border border-rounded'>" + itemName + ": " + itemAmount + "</div>"
+        //let list_element = "<div class='p-2 m-1 text-white font-weight-bold rounded itemcon'>" + itemName + ": " + itemAmount + "</div>"
+
+        let list_element = `
+        <div class='m-1 text-white font-weight-normal rounded itemcon'>
+            <div class="row">
+                <div class="col-4 text-capitalize">`+itemName+`</div>
+                <div class="col-4">Amount: `+itemAmount+`</div>
+                <div class="col-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value=""
+                    <div>
+                </div>
+            </div>
+        </div>
+        `
 
         console.log(list_element)
-        $("#" + e.target.id + "_list").append(list_element);
+        if (itemName != '') {
+            $("#" + e.target.id + "_list").append(list_element);
+        }
+    });
+    // Handles actions for dynamically removing an item from the item list
+    $(document).on("click", ".rmitm", function(e) {
+        alert("action not yet functional!")
     });
 });
 
