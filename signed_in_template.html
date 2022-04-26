@@ -126,115 +126,43 @@ Credit:
     </nav>
 
     <!--Main Content-->
-    <div id="firebase-sign-in"></div>
-    <div class="container-fluid justify-content-center vh-100 text-center">
-        <div class="row vh-100 w-100">
-            <div class="col-xxl-2 col-lg-4 col-md-3 d-none d-lg-block">
-                <!--Friend Online Status Container-->
-                <div class="w-100 h-50">
-                    <!--Insert Content Here-->
-                    <div class="card h-100 mt-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Friends Online</h5>
-                            <br>
-                            <!--Temporary Friend Status Information {TO BE REPLACED...}-->
-                            <div class="row p-0 m-0">
-                                <div class="col-sm-2 text-end"><img src="assets/online_status.png" class="online_status_img"></div>
-                                <div class="col-sm-10 text-start"><h5">Jon Favreau</h5></div>
-                            </div>
-                            <div class="row p-0 m-0">
-                                <div class="col-sm-2 text-end"><img src="assets/online_status.png" class="online_status_img"></div>
-                                <div class="col-sm-10 text-start"><h5">Robert Downey Jr.</h5></div>
-                            </div>
-                            <div class="row p-0 m-0">
-                                <div class="col-sm-2 text-end"><img src="assets/online_status.png" class="online_status_img"></div>
-                                <div class="col-sm-10 text-start"><h5">Carl Casper</h5></div>
-                            </div>
-                            <div class="row p-0 m-0">
-                                <div class="col-sm-2 text-end"><img src="assets/offline_status.png" class="offline_status_img"></div>
-                                <div class="col-sm-10 text-start"><h5">John Leguizamo</h5></div>
-                            </div>
-                            <div class="row p-0 m-0">
-                                <div class="col-sm-2 text-end"><img src="assets/offline_status.png" class="offline_status_img"></div>
-                                <div class="col-sm-10 text-start"><h5">Dustin Hoffman</h5></div>
-                            </div>
-                        </div>
+    <div class="container-fluid vh-100 p-0 m-0">
+        <div class="row w-100 p-0 m-0 d-flex">
+            <div class="col-xxl-2 col-md-4 order-2 order-md-1 text-center p-4">
+                <h5 class="card-title mb-3">Journey Hub</h5>
+                <h5 id="trip_label"></h5>
+                <form class="form" id="startpanel">
+                    <div>
+                        <label for="startlocation">Origin</label>
+                        <input id="start_addr" class="form-control mb-3" type="text" placeholder="Address">
                     </div>
-                </div>
-                <!--Notification Container-->
-                <div class="w-100 h-50 mt-1">
-                    <!--Insert Content Here-->
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Notification Bar</h5>
-                            <p class="card-text">You have no new notifications...</p>
-                        </div>
+                    <div>
+                        <label for="endlocation">Destination</label>
+                        <input id="end_addr" class="form-control" type="text" placeholder="Address">
                     </div>
-                </div>
+                    <button type="button" class="btn btn-success btn-lg btn-block w-100 mt-4" id="gobtn">Start Journey
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                            <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
+                          </svg>
+                    </button>
+                </form>
+                <form id="activepanel">
+                    <button type="button" class="btn btn-danger btn-lg btn-block w-100 mt-4" id="endbtn">End Journey
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                          </svg>
+                    </button>
+                    <input id="add_addr" class="form-control mt-4 mb-3" type="text" placeholder="Address">
+                    <button type="button" class="btn btn-warning btn-lg btn-block w-100" id="addbtn">Add Stop 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
+                            <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+                          </svg>
+                    </button>
+                    <div id="waypntlistroot" class="mt-3"></div>
+                </form>
             </div>
-            <!--Google Map Container-->
-            <div class="col-xxl-8 col-lg-8 col-md-12">
-                <div class="container-fluid vh-100">
-                    <div class="vstack vh-100">
-                        <!--Insert Content Here-->
-                        <div class="row h-75">
-                            <div id="account_map" class="bg-info">
-                            </div>
-                        </div>
-                        <div class="row h-25">
-                            <!--Insert Content Here-->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Journey Hub</h5>
-                                    <h5 id="trip_label"></h5>
-                                    <form class="form" id="startpanel">
-                                        <div>
-                                            <label for="startlocation">Origin</label>
-                                            <input id="start_addr" class="form-control" type="text" placeholder="Address">
-                                        </div>
-                                        <div>
-                                            <label for="endlocation">Destination</label>
-                                            <input id="end_addr" class="form-control" type="text" placeholder="Address">
-                                        </div>
-                                        <button type="button" class="btn btn-success btn-lg btn-block w-100 mt-4" id="gobtn">Start Journey
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
-                                                <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
-                                              </svg>
-                                        </button>
-                                    </form>
-                                    <form id="activepanel">
-                                        <button type="button" class="btn btn-danger btn-lg btn-block w-100 mt-4" id="endbtn">End Journey
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
-                                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
-                                              </svg>
-                                        </button>
-                                        <input id="add_addr" class="form-control mt-4 mb-3" type="text" placeholder="Address">
-                                        <button type="button" class="btn btn-warning btn-lg btn-block w-100" id="addbtn">Add Stop 
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
-                                                <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
-                                              </svg>
-                                        </button>
-                                        <div id="waypntlistroot" class="mt-3"></div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Message Chat Content-->
-            <div class="col-xxl-2 col-md-12 d-none d-xxl-block vh-100">
-                <div class="card h-100 mt-3">
-                    <!--Insert Content Here-->
-                    <div class="card-body">
-                        <h5 class="card-title">Chat Menu</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Find a Chat Group</a>
-                    </div>
-                </div>
-            </div>
+            <div class="col-xxl-10 col-md-8 order-1 order-md-2 bg-warning p-0">
+                <div id="account_map" class="bg-info vh-100"></div>
         </div>
     </div>
 
