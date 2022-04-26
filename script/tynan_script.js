@@ -28,12 +28,12 @@ function signOut() {
       console.log('User signed out.');
     });
 
-    window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/");
+    window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/index.html");
 }
 
 function newSignOut() {
   firebase.auth().signOut();
-  window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/");
+  window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/index.html");
 }
 
 function getUserInformation() {
