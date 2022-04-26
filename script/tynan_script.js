@@ -6,7 +6,7 @@ function onSignInMain(googleUser) {
     var saveProfileImage = profile.getImageUrl();
     var saveProfileName = profile.getName();
 
-    //window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/signed_in_template.html");
+    window.location.replace("https://hollyertynan.github.io/HOP-TO-IT/signed_in_template.html");
 }
 
 function signedInPage(googleUser) {
