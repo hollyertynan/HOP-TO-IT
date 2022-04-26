@@ -56,9 +56,9 @@ $(document).ready(function () {
     const watchId = navigator.geolocation.watchPosition(successCallback, errorCallback);
 
     // Intializes Places API Object (Location Autocomplete Feature)
-    //var autocomplete1 = new google.maps.places.Autocomplete($("#start_addr")[0]);
-    //var autocomplete2 = new google.maps.places.Autocomplete($("#end_addr")[0]);
-    //var autocomplete3 = new google.maps.places.Autocomplete($("#add_addr")[0]);
+    var autocomplete1 = new google.maps.places.Autocomplete($("#start_addr")[0]);
+    var autocomplete2 = new google.maps.places.Autocomplete($("#end_addr")[0]);
+    var autocomplete3 = new google.maps.places.Autocomplete($("#add_addr")[0]);
 
     // Binds Direction Object to Map Object
     directionsRenderer.setMap(map);
