@@ -1,7 +1,7 @@
 function onSignInMain(googleUser) {
     var profile = googleUser.getBasicProfile();
-    document.getElementById("remove_signin").innerHTML = "<h5 class=\"my-auto mx-auto\">" + profile.getName() + "</h5>";
-    document.getElementById("add_name").innerHTML = "<img class=\"img-fluid ms-4 mx-auto rounded-circle\" style=\"max-width: 50px\" src='" + profile.getImageUrl() + "' alt='Profile Picture'>";
+    //document.getElementById("remove_signin").innerHTML = "<h5 class=\"my-auto mx-auto\">" + profile.getName() + "</h5>";
+    //document.getElementById("add_name").innerHTML = "<img class=\"img-fluid ms-4 mx-auto rounded-circle\" style=\"max-width: 50px\" src='" + profile.getImageUrl() + "' alt='Profile Picture'>";
 
     var saveProfileImage = profile.getImageUrl();
     var saveProfileName = profile.getName();
